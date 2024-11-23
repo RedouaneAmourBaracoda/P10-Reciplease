@@ -50,10 +50,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8D33C662CF2A2FE007C5A28 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B8DD82082CF298C900BCFC22 /* Assets.xcassets */,
+				B8DD820A2CF298C900BCFC22 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B8DD81F82CF298C700BCFC22 = {
 			isa = PBXGroup;
 			children = (
 				B8DD82032CF298C700BCFC22 /* Reciplease */,
+				B8D33C662CF2A2FE007C5A28 /* Resources */,
 				B8DD82142CF298CA00BCFC22 /* Tests */,
 				B8DD82022CF298C700BCFC22 /* Products */,
 			);
@@ -72,8 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				B8DD82042CF298C700BCFC22 /* RecipleaseApp.swift */,
-				B8DD82082CF298C900BCFC22 /* Assets.xcassets */,
-				B8DD820A2CF298C900BCFC22 /* Preview Content */,
 			);
 			path = Reciplease;
 			sourceTree = "<group>";
@@ -343,7 +351,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Reciplease/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = CJ4U3HXF7J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -372,7 +380,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Reciplease/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = CJ4U3HXF7J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
