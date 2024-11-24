@@ -16,10 +16,11 @@
 		B8D33C7F2CF3AED5007C5A28 /* RecipeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D33C7E2CF3AED5007C5A28 /* RecipeAPIService.swift */; };
 		B8D33C812CF3AF50007C5A28 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D33C802CF3AF50007C5A28 /* Localizable.swift */; };
 		B8D33C832CF3B68F007C5A28 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B8D33C822CF3B68F007C5A28 /* Localizable.xcstrings */; };
+		B8D33C852CF3BB5C007C5A28 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D33C842CF3BB5C007C5A28 /* MockURLProtocol.swift */; };
 		B8DD82052CF298C700BCFC22 /* RecipleaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD82042CF298C700BCFC22 /* RecipleaseApp.swift */; };
 		B8DD82092CF298C900BCFC22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8DD82082CF298C900BCFC22 /* Assets.xcassets */; };
 		B8DD820C2CF298C900BCFC22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8DD820B2CF298C900BCFC22 /* Preview Assets.xcassets */; };
-		B8DD82162CF298CA00BCFC22 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD82152CF298CA00BCFC22 /* RecipleaseTests.swift */; };
+		B8DD82162CF298CA00BCFC22 /* EdamamAPIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD82152CF298CA00BCFC22 /* EdamamAPIServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,12 +43,13 @@
 		B8D33C7E2CF3AED5007C5A28 /* RecipeAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPIService.swift; sourceTree = "<group>"; };
 		B8D33C802CF3AF50007C5A28 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		B8D33C822CF3B68F007C5A28 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		B8D33C842CF3BB5C007C5A28 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		B8DD82012CF298C700BCFC22 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8DD82042CF298C700BCFC22 /* RecipleaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseApp.swift; sourceTree = "<group>"; };
 		B8DD82082CF298C900BCFC22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8DD820B2CF298C900BCFC22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B8DD82112CF298CA00BCFC22 /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8DD82152CF298CA00BCFC22 /* RecipleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseTests.swift; sourceTree = "<group>"; };
+		B8DD82152CF298CA00BCFC22 /* EdamamAPIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamAPIServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +174,8 @@
 		B8DD82142CF298CA00BCFC22 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B8DD82152CF298CA00BCFC22 /* RecipleaseTests.swift */,
+				B8D33C842CF3BB5C007C5A28 /* MockURLProtocol.swift */,
+				B8DD82152CF298CA00BCFC22 /* EdamamAPIServiceTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				B8D33C7F2CF3AED5007C5A28 /* RecipeAPIService.swift in Sources */,
 				B8D33C702CF2C8E6007C5A28 /* RecipeViewModel.swift in Sources */,
 				B8D33C742CF2C9C8007C5A28 /* RecipeView.swift in Sources */,
+				B8D33C852CF3BB5C007C5A28 /* MockURLProtocol.swift in Sources */,
 				B8D33C812CF3AF50007C5A28 /* Localizable.swift in Sources */,
 				B8D33C6D2CF2C75C007C5A28 /* EdamamAPIService.swift in Sources */,
 			);
@@ -317,7 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8DD82162CF298CA00BCFC22 /* RecipleaseTests.swift in Sources */,
+				B8DD82162CF298CA00BCFC22 /* EdamamAPIServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

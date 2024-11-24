@@ -8,18 +8,18 @@
 import Foundation
 
 // swiftlint:disable identifier_name
-struct EdamamAPIResponse: Codable {
+struct EdamamAPIResponse: Codable, Equatable {
     let q: String
     let count: Int
     let hits: [Hit]
 }
 // swiftlint:enable identifier_name
 
-struct Hit: Codable {
+struct Hit: Codable, Equatable {
     let recipe: Recipe
 }
 
-struct Recipe: Codable {
+struct Recipe: Codable, Equatable {
     let label: String
     let image: String
     let yield: Float
@@ -31,7 +31,7 @@ struct Recipe: Codable {
     let cuisineType: [String]
 }
 
-struct Ingredient: Codable {
+struct Ingredient: Codable, Equatable {
     let text: String
     let quantity: Float
     let food: String
