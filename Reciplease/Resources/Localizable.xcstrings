@@ -1,0 +1,119 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "recipe.edamam-api.errors.bad-request.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Missing parameters in the request or some have incorrect format or values out of allowed range."
+          }
+        }
+      }
+    },
+    "recipe.edamam-api.errors.bad-request.user-friendly-description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The food provided does not exist in data base or has invalid format."
+          }
+        }
+      }
+    },
+    "recipe.edamam-api.errors.internal-error.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unexpected Error due to internal issues."
+          }
+        }
+      }
+    },
+    "recipe.edamam-api.errors.invalid-request.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid request"
+          }
+        }
+      }
+    },
+    "recipe.edamam-api.errors.invalid-request.user-friendly-description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There was an issue with weather services. Access might be restricted or services are simply down."
+          }
+        }
+      }
+    },
+    "recipe.edamam-api.errors.invalid-url.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid URL"
+          }
+        }
+      }
+    },
+    "recipe.edamam-api.errors.not-found.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data with requested parameters (food etc) does not exist in service database"
+          }
+        }
+      }
+    },
+    "recipe.edamam-api.errors.too-many-requests.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quota of requests was exceeded. Retry request later or after extending your key quota."
+          }
+        }
+      }
+    },
+    "recipe.edamam-api.errors.too-many-requests.user-friendly-description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The limit of requests to weather services has been exceeded."
+          }
+        }
+      }
+    },
+    "recipe.edamam-api.errors.unauthorized.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "API token not providen in the request or if provided does not grant access to this API."
+          }
+        }
+      }
+    },
+    "recipe.errors.undetermined.description" : {
+
+    },
+    "recipe.search-button.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
