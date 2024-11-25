@@ -62,7 +62,9 @@ struct FoodListView: View {
 
     private func searchActionView() -> some View {
         Button {
-
+            Task {
+                await viewModel.getRecipes()
+            }
         } label: {
             Text(Localizable.searchForRecipesButtonTitle)
                 .font(.title2)

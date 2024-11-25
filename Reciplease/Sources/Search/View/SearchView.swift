@@ -17,7 +17,8 @@ struct SearchView: View {
                 InputFoodView(viewModel: viewModel)
                 FoodListView(viewModel: viewModel)
             }
-            .padding(.vertical)
+            .padding(.top)
+            .padding(.bottom, 0.5)
             .customNavigationBar(navigationTitle: Localizable.navigationTitle)
         }
     }

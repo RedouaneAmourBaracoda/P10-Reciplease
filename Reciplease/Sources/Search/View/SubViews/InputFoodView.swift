@@ -11,6 +11,8 @@ struct InputFoodView: View {
 
     @ObservedObject private var viewModel: SearchViewModel
 
+    @FocusState private var showKeyboard: Bool
+
     init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
     }
@@ -25,9 +27,11 @@ struct InputFoodView: View {
                     TextField(Localizable.searchFoodPlaceholder, text: $viewModel.inputFoodText)
                         .fontWeight(.bold)
                         .autocorrectionDisabled()
+                        .focused($showKeyboard)
                     Divider()
                 }
                 Button {
+                    showKeyboard = false
                     viewModel.add()
                 } label: {
                     Text(Localizable.addFoodButtonTitle)
@@ -38,7 +42,7 @@ struct InputFoodView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 5.0))
                 }
             }
-            .padding()
+            .padding(.horizontal)
         }
     }
 }

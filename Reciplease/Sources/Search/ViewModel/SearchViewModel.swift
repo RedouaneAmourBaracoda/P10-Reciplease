@@ -16,8 +16,6 @@ final class SearchViewModel: ObservableObject {
 
     @Published var foodList: [String]
 
-    @Published var recipe: String = "chicken"
-
     @Published var shouldPresentAlert = false
 
     var errorMessage: String = ""
@@ -45,12 +43,14 @@ final class SearchViewModel: ObservableObject {
         foodList.removeAll()
     }
 
-    func getRecipe() async {
+    func getRecipes() async {
 
-        guard !recipe.isEmpty else { return }
+        guard !foodList.isEmpty else { return }
+
+        let food = foodList.joined(separator: " ")
 
         do {
-            let apiResponse = try await recipeAPIService.fetchRecipe(for: recipe)
+            let apiResponse = try await recipeAPIService.fetchRecipe(for: food)
             print(apiResponse)
         } catch {
             if let recipeAPIError = error as? (any RecipeAPIError) {

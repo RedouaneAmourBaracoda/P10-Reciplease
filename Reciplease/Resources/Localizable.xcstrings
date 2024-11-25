@@ -4,6 +4,12 @@
     "- %@" : {
 
     },
+    "Favorite" : {
+
+    },
+    "Page2" : {
+
+    },
     "recipe.edamam-api.errors.bad-request.description" : {
       "localizations" : {
         "en" : {
@@ -124,6 +130,9 @@
         }
       }
     },
+    "Search" : {
+
+    },
     "search.food-list.button.title" : {
       "localizations" : {
         "en" : {
@@ -169,7 +178,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lemon, Cheese, Sausages..."
+            "value" : "Lemon Cheese Sausages..."
           }
         }
       }
