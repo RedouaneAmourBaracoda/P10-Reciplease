@@ -8,9 +8,11 @@
 import SwiftUI
 
 @MainActor
-final class RecipeViewModel: ObservableObject {
+final class SearchViewModel: ObservableObject {
 
     // MARK: - State
+
+    @Published var inputFoodText: String = ""
 
     @Published var recipe: String = "chicken"
 

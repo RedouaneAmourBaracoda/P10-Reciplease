@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Add" : {
+
+    },
+    "Lemon, Cheese, Sausages..." : {
+
+    },
     "recipe.edamam-api.errors.bad-request.description" : {
       "localizations" : {
         "en" : {
@@ -113,6 +119,9 @@
           }
         }
       }
+    },
+    "What's in your fridge ?" : {
+
     }
   },
   "version" : "1.0"
