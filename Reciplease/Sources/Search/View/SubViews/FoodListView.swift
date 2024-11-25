@@ -70,7 +70,7 @@ struct FoodListView: View {
                 .font(.title2)
                 .foregroundStyle(.white)
                 .padding()
-                .background { Color.green }
+                .background { CustomColors.secondary }
                 .clipShape(RoundedRectangle(cornerRadius: 5.0))
                 .padding()
         }

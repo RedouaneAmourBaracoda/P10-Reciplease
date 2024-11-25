@@ -14,12 +14,12 @@ struct RecipleaseApp: App {
             TabView {
                 SearchView()
                     .tabItem {
-                        Text("Search")
+                        Text(Localizable.searchTabBarItemTitle)
                     }
 
                 Text("")
                     .tabItem {
-                        Text("Favorite")
+                        Text(Localizable.favoritesTabBarItemTitle)
                     }
             }
             .onAppear {
@@ -31,4 +31,16 @@ struct RecipleaseApp: App {
             }
         }
     }
+}
+
+private extension Localizable {
+    static let searchTabBarItemTitle = NSLocalizedString(
+        "tabs.search.title",
+        comment: ""
+    )
+
+    static let favoritesTabBarItemTitle = NSLocalizedString(
+        "tabs.favorites.title",
+        comment: ""
+    )
 }

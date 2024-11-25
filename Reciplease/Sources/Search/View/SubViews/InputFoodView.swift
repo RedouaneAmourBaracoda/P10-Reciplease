@@ -18,7 +18,7 @@ struct InputFoodView: View {
     }
 
     var body: some View {
-        VStack(spacing: 8.0) {
+        VStack {
             Text(Localizable.searchFoodTitle)
                 .font(.title2)
                 .foregroundStyle(CustomColors.main)
@@ -38,7 +38,7 @@ struct InputFoodView: View {
                         .font(.title3)
                         .foregroundStyle(.white)
                         .padding(.horizontal)
-                        .background { Color.green }
+                        .background { CustomColors.secondary }
                         .clipShape(RoundedRectangle(cornerRadius: 5.0))
                 }
             }

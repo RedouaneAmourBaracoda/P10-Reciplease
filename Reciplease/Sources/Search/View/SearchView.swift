@@ -20,6 +20,9 @@ struct SearchView: View {
             .padding(.top)
             .padding(.bottom, 0.5)
             .customNavigationBar(navigationTitle: Localizable.navigationTitle)
+            .alert(isPresented: $viewModel.shouldPresentAlert) {
+                Alert(title: Text(Localizable.errorAlertTitle), message: Text(viewModel.errorMessage))
+            }
         }
     }
 }
@@ -27,6 +30,11 @@ struct SearchView: View {
 private extension Localizable {
     static let navigationTitle = NSLocalizedString(
         "search.navigation.title",
+        comment: ""
+    )
+
+    static let errorAlertTitle = NSLocalizedString(
+        "search.alert.error.title",
         comment: ""
     )
 }

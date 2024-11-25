@@ -1,13 +1,10 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "- %@" : {
-
-    },
-    "Favorite" : {
-
-    },
-    "Page2" : {
 
     },
     "recipe.edamam-api.errors.bad-request.description" : {
@@ -130,8 +127,15 @@
         }
       }
     },
-    "Search" : {
-
+    "search.alert.error.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        }
+      }
     },
     "search.food-list.button.title" : {
       "localizations" : {
@@ -199,6 +203,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reciplease"
+          }
+        }
+      }
+    },
+    "tabs.favorites.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorites"
+          }
+        }
+      }
+    },
+    "tabs.search.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
           }
         }
       }

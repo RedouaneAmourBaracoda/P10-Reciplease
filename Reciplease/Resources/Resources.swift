@@ -13,6 +13,7 @@ enum CustomFonts {
 
 enum CustomColors {
     static let main = Color("main-color", bundle: .main)
+    static let secondary = Color("button-color", bundle: .main)
 }
 
 enum Localizable {
