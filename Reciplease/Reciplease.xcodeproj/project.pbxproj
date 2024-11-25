@@ -48,7 +48,7 @@
 		B8D33C822CF3B68F007C5A28 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		B8D33C842CF3BB5C007C5A28 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		B8D33C872CF42A85007C5A28 /* SueEllenFrancisco-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SueEllenFrancisco-Regular.ttf"; sourceTree = "<group>"; };
-		B8D33C892CF42AC9007C5A28 /* Reciplease-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Reciplease-Info.plist"; sourceTree = "<group>"; };
+		B8D33C892CF42AC9007C5A28 /* Reciplease-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Reciplease-Info.plist"; sourceTree = "<group>"; };
 		B8D33C8B2CF4441E007C5A28 /* InputFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFoodView.swift; sourceTree = "<group>"; };
 		B8D33C8D2CF449DE007C5A28 /* CustomNavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarModifier.swift; sourceTree = "<group>"; };
 		B8DD82012CF298C700BCFC22 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,10 +161,18 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
-		B8DD81F82CF298C700BCFC22 = {
+		B8D33C902CF44C2D007C5A28 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
 				B8D33C892CF42AC9007C5A28 /* Reciplease-Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		B8DD81F82CF298C700BCFC22 = {
+			isa = PBXGroup;
+			children = (
+				B8D33C902CF44C2D007C5A28 /* Configuration */,
 				B8DD82032CF298C700BCFC22 /* Sources */,
 				B8D33C662CF2A2FE007C5A28 /* Resources */,
 				B8DD82142CF298CA00BCFC22 /* Tests */,
@@ -497,7 +505,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Reciplease-Info.plist";
+				INFOPLIST_FILE = "Configuration/Reciplease-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -528,7 +536,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Reciplease-Info.plist";
+				INFOPLIST_FILE = "Configuration/Reciplease-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
