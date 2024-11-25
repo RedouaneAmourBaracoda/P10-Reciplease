@@ -1,11 +1,19 @@
 //
-//  Localizable.swift
+//  Resources.swift
 //  Reciplease
 //
-//  Created by Redouane on 24/11/2024.
+//  Created by Redouane on 25/11/2024.
 //
 
-import Foundation
+import SwiftUI
+
+enum CustomFonts {
+    static let body = "SueEllenFrancisco"
+}
+
+enum CustomColors {
+    static let main = Color("main-color", bundle: .main)
+}
 
 enum Localizable {
     static let undeterminedErrorDescription = NSLocalizedString(

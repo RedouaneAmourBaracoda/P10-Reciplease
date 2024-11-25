@@ -14,12 +14,13 @@
 		B8D33C792CF3AC95007C5A28 /* EdamamAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D33C782CF3AC95007C5A28 /* EdamamAPIError.swift */; };
 		B8D33C7D2CF3AEA4007C5A28 /* RecipeAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D33C7C2CF3AEA4007C5A28 /* RecipeAPIError.swift */; };
 		B8D33C7F2CF3AED5007C5A28 /* RecipeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D33C7E2CF3AED5007C5A28 /* RecipeAPIService.swift */; };
-		B8D33C812CF3AF50007C5A28 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D33C802CF3AF50007C5A28 /* Localizable.swift */; };
 		B8D33C832CF3B68F007C5A28 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B8D33C822CF3B68F007C5A28 /* Localizable.xcstrings */; };
 		B8D33C852CF3BB5C007C5A28 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D33C842CF3BB5C007C5A28 /* MockURLProtocol.swift */; };
 		B8D33C882CF42A85007C5A28 /* SueEllenFrancisco-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8D33C872CF42A85007C5A28 /* SueEllenFrancisco-Regular.ttf */; };
 		B8D33C8C2CF4441E007C5A28 /* InputFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D33C8B2CF4441E007C5A28 /* InputFoodView.swift */; };
 		B8D33C8E2CF449DE007C5A28 /* CustomNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D33C8D2CF449DE007C5A28 /* CustomNavigationBarModifier.swift */; };
+		B8D33C922CF44FD7007C5A28 /* FoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D33C912CF44FD7007C5A28 /* FoodListView.swift */; };
+		B8D33C942CF4569D007C5A28 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D33C932CF4569D007C5A28 /* Resources.swift */; };
 		B8DD82052CF298C700BCFC22 /* RecipleaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD82042CF298C700BCFC22 /* RecipleaseApp.swift */; };
 		B8DD82092CF298C900BCFC22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8DD82082CF298C900BCFC22 /* Assets.xcassets */; };
 		B8DD820C2CF298C900BCFC22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8DD820B2CF298C900BCFC22 /* Preview Assets.xcassets */; };
@@ -44,13 +45,14 @@
 		B8D33C782CF3AC95007C5A28 /* EdamamAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamAPIError.swift; sourceTree = "<group>"; };
 		B8D33C7C2CF3AEA4007C5A28 /* RecipeAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPIError.swift; sourceTree = "<group>"; };
 		B8D33C7E2CF3AED5007C5A28 /* RecipeAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPIService.swift; sourceTree = "<group>"; };
-		B8D33C802CF3AF50007C5A28 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		B8D33C822CF3B68F007C5A28 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		B8D33C842CF3BB5C007C5A28 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		B8D33C872CF42A85007C5A28 /* SueEllenFrancisco-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SueEllenFrancisco-Regular.ttf"; sourceTree = "<group>"; };
 		B8D33C892CF42AC9007C5A28 /* Reciplease-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Reciplease-Info.plist"; sourceTree = "<group>"; };
 		B8D33C8B2CF4441E007C5A28 /* InputFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFoodView.swift; sourceTree = "<group>"; };
 		B8D33C8D2CF449DE007C5A28 /* CustomNavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarModifier.swift; sourceTree = "<group>"; };
+		B8D33C912CF44FD7007C5A28 /* FoodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListView.swift; sourceTree = "<group>"; };
+		B8D33C932CF4569D007C5A28 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		B8DD82012CF298C700BCFC22 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8DD82042CF298C700BCFC22 /* RecipleaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseApp.swift; sourceTree = "<group>"; };
 		B8DD82082CF298C900BCFC22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,9 +82,9 @@
 		B8D33C662CF2A2FE007C5A28 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B8D33C932CF4569D007C5A28 /* Resources.swift */,
 				B8D33C862CF42A46007C5A28 /* Fonts */,
 				B8DD82082CF298C900BCFC22 /* Assets.xcassets */,
-				B8D33C802CF3AF50007C5A28 /* Localizable.swift */,
 				B8D33C822CF3B68F007C5A28 /* Localizable.xcstrings */,
 				B8DD820A2CF298C900BCFC22 /* Preview Content */,
 			);
@@ -157,6 +159,7 @@
 			children = (
 				B8D33C8D2CF449DE007C5A28 /* CustomNavigationBarModifier.swift */,
 				B8D33C8B2CF4441E007C5A28 /* InputFoodView.swift */,
+				B8D33C912CF44FD7007C5A28 /* FoodListView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -349,9 +352,10 @@
 				B8D33C742CF2C9C8007C5A28 /* SearchView.swift in Sources */,
 				B8D33C852CF3BB5C007C5A28 /* MockURLProtocol.swift in Sources */,
 				B8D33C8C2CF4441E007C5A28 /* InputFoodView.swift in Sources */,
+				B8D33C922CF44FD7007C5A28 /* FoodListView.swift in Sources */,
 				B8D33C8E2CF449DE007C5A28 /* CustomNavigationBarModifier.swift in Sources */,
-				B8D33C812CF3AF50007C5A28 /* Localizable.swift in Sources */,
 				B8D33C6D2CF2C75C007C5A28 /* EdamamAPIService.swift in Sources */,
+				B8D33C942CF4569D007C5A28 /* Resources.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

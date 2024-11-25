@@ -1,10 +1,7 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Add" : {
-
-    },
-    "Lemon, Cheese, Sausages..." : {
+    "- %@" : {
 
     },
     "recipe.edamam-api.errors.bad-request.description" : {
@@ -108,7 +105,14 @@
       }
     },
     "recipe.errors.undetermined.description" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A non-determined error with food services occurred."
+          }
+        }
+      }
     },
     "recipe.search-button.title" : {
       "localizations" : {
@@ -120,8 +124,75 @@
         }
       }
     },
-    "What's in your fridge ?" : {
-
+    "search.food-list.button.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search for recipes"
+          }
+        }
+      }
+    },
+    "search.food-list.clear-button.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear"
+          }
+        }
+      }
+    },
+    "search.food-list.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yours ingredients :"
+          }
+        }
+      }
+    },
+    "search.food.add-button.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add"
+          }
+        }
+      }
+    },
+    "search.food.textfield.placeholder" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lemon, Cheese, Sausages..."
+          }
+        }
+      }
+    },
+    "search.food.textfield.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's in your fridge ?"
+          }
+        }
+      }
+    },
+    "search.navigation.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reciplease"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

@@ -13,14 +13,21 @@ struct SearchView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
+            VStack {
                 InputFoodView(viewModel: viewModel)
-                Spacer()
+                FoodListView(viewModel: viewModel)
             }
-            .safeAreaPadding()
-            .customNavigationBar(navigationTitle: "Reciplease")
+            .padding(.vertical)
+            .customNavigationBar(navigationTitle: Localizable.navigationTitle)
         }
     }
+}
+
+private extension Localizable {
+    static let navigationTitle = NSLocalizedString(
+        "search.navigation.title",
+        comment: ""
+    )
 }
 
 #Preview {

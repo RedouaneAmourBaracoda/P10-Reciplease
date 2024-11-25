@@ -11,10 +11,10 @@ extension View {
     func customNavigationBar(
         navigationTitle: String,
         navigationTitleDisplayMode: NavigationBarItem.TitleDisplayMode = .inline,
-        fontName: String = "SueEllenFrancisco",
+        fontName: String = CustomFonts.body,
         fontSize: CGFloat = 30.0,
         foregroundColor: UIColor = .white,
-        backgroundColor: UIColor = .brown
+        backgroundColor: UIColor = .init(CustomColors.main)
     ) -> some View {
         modifier(CustomNavigationBarModifier(
             navigationTitle: navigationTitle,

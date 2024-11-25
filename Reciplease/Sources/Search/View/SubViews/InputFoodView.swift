@@ -17,25 +17,47 @@ struct InputFoodView: View {
 
     var body: some View {
         VStack(spacing: 8.0) {
-            Text("What's in your fridge ?")
+            Text(Localizable.searchFoodTitle)
+                .font(.title2)
+                .foregroundStyle(CustomColors.main)
             HStack(spacing: 8) {
-                TextField("Lemon, Cheese, Sausages...", text: $viewModel.inputFoodText)
-                    .fontWeight(.bold)
-                    .autocorrectionDisabled()
+                VStack {
+                    TextField(Localizable.searchFoodPlaceholder, text: $viewModel.inputFoodText)
+                        .fontWeight(.bold)
+                        .autocorrectionDisabled()
+                    Divider()
+                }
                 Button {
-
+                    viewModel.add()
                 } label: {
-                    Text("Add")
+                    Text(Localizable.addFoodButtonTitle)
+                        .font(.title3)
                         .foregroundStyle(.white)
                         .padding(.horizontal)
-                        .background {
-                            Color.green
-                        }
+                        .background { Color.green }
+                        .clipShape(RoundedRectangle(cornerRadius: 5.0))
                 }
             }
             .padding()
         }
     }
+}
+
+private extension Localizable {
+    static let searchFoodTitle = NSLocalizedString(
+        "search.food.textfield.title",
+        comment: ""
+    )
+
+    static let searchFoodPlaceholder = NSLocalizedString(
+        "search.food.textfield.placeholder",
+        comment: ""
+    )
+
+    static let addFoodButtonTitle = NSLocalizedString(
+        "search.food.add-button.title",
+        comment: ""
+    )
 }
 
 #Preview {

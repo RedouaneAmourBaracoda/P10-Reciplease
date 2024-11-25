@@ -14,6 +14,8 @@ final class SearchViewModel: ObservableObject {
 
     @Published var inputFoodText: String = ""
 
+    @Published var foodList: [String]
+
     @Published var recipe: String = "chicken"
 
     @Published var shouldPresentAlert = false
@@ -26,11 +28,22 @@ final class SearchViewModel: ObservableObject {
 
     // MARK: - Initializer.
 
-    init(recipeAPIService: EdamamAPIService = EdamamAPIService()) {
+    init(recipeAPIService: EdamamAPIService = EdamamAPIService(), foodList: [String] = []) {
         self.recipeAPIService = recipeAPIService
+        self.foodList = foodList
     }
 
     // MARK: - Methods.
+
+    func add() {
+        guard !inputFoodText.isEmpty else { return }
+        foodList.append(inputFoodText)
+        inputFoodText.removeAll()
+    }
+
+    func clear() {
+        foodList.removeAll()
+    }
 
     func getRecipe() async {
 
@@ -48,9 +61,5 @@ final class SearchViewModel: ObservableObject {
             }
             shouldPresentAlert = true
         }
-    }
-
-    func clear() {
-        recipe.removeAll()
     }
 }
