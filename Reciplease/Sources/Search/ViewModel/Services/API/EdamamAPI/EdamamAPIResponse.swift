@@ -22,12 +22,12 @@ struct Hit: Codable, Equatable {
 struct Recipe: Codable, Equatable {
     let label: String
     let image: String
-    let yield: Float
+    let yield: Int
     let ingredientLines: [String]
     let ingredients: [Ingredient]
     let calories: Double
     let totalWeight: Double
-    let totalTime: Float
+    let totalTime: Int
     let cuisineType: [String]
 }
 

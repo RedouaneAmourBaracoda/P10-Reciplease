@@ -50,8 +50,7 @@ final class SearchViewModel: ObservableObject {
         let food = foodList.joined(separator: " ")
 
         do {
-            let apiResponse = try await recipeAPIService.fetchRecipe(for: food)
-            print(apiResponse)
+            let recipes = try await recipeAPIService.fetchRecipe(for: food)
         } catch {
             if let recipeAPIError = error as? (any RecipeAPIError) {
                 NSLog(recipeAPIError.errorDescription ?? Localizable.undeterminedErrorDescription)

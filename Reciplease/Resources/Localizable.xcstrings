@@ -7,6 +7,9 @@
     "- %@" : {
 
     },
+    "Hello" : {
+
+    },
     "recipe.edamam-api.errors.bad-request.description" : {
       "localizations" : {
         "en" : {
@@ -113,6 +116,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "A non-determined error with food services occurred."
+          }
+        }
+      }
+    },
+    "recipe.image.not-found" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No image available"
           }
         }
       }

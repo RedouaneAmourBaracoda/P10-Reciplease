@@ -8,5 +8,5 @@
 import Foundation
 
 protocol RecipeAPIService {
-    func fetchRecipe(for food: String) async throws -> EdamamAPIResponse
+    func fetchRecipe(for food: String) async throws -> [RecipeModel]
 }

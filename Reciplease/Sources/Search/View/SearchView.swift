@@ -13,17 +13,21 @@ struct SearchView: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
-                InputFoodView(viewModel: viewModel)
-                FoodListView(viewModel: viewModel)
-            }
-            .padding(.top)
-            .padding(.bottom, 0.5)
-            .customNavigationBar(navigationTitle: Localizable.navigationTitle)
-            .alert(isPresented: $viewModel.shouldPresentAlert) {
-                Alert(title: Text(Localizable.errorAlertTitle), message: Text(viewModel.errorMessage))
-            }
+            contentView()
+                .customNavigationBar(navigationTitle: Localizable.navigationTitle)
+                .alert(isPresented: $viewModel.shouldPresentAlert) {
+                    Alert(title: Text(Localizable.errorAlertTitle), message: Text(viewModel.errorMessage))
+                }
         }
+    }
+
+    private func contentView() -> some View {
+        VStack {
+            InputFoodView(viewModel: viewModel)
+            FoodListView(viewModel: viewModel)
+        }
+        .padding(.top)
+        .padding(.bottom, 0.5)
     }
 }
 
