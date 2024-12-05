@@ -25,9 +25,34 @@ struct SearchView: View {
         VStack {
             InputFoodView(viewModel: viewModel)
             FoodListView(viewModel: viewModel)
+            Spacer()
+            searchActionView()
+                .navigationDestination(isPresented: $viewModel.showRecipes) {
+                    RecipeListView(viewModel: .init(recipes: viewModel.recipes))
+                }
         }
+        .onAppear {
+            viewModel.showRecipes = false
+        }
+        .background { CustomColors.main }
         .padding(.top)
         .padding(.bottom, 0.5)
+    }
+
+    private func searchActionView() -> some View {
+        Button {
+            Task {
+                await viewModel.getRecipes()
+            }
+        } label: {
+            Text(Localizable.searchForRecipesButtonTitle)
+                .font(.title2)
+                .foregroundStyle(.white)
+                .padding()
+                .background { CustomColors.secondary }
+                .clipShape(RoundedRectangle(cornerRadius: 5.0))
+                .padding()
+        }
     }
 }
 
@@ -39,6 +64,11 @@ private extension Localizable {
 
     static let errorAlertTitle = NSLocalizedString(
         "search.alert.error.title",
+        comment: ""
+    )
+
+    static let searchForRecipesButtonTitle = NSLocalizedString(
+        "search.food-list.button.title",
         comment: ""
     )
 }

@@ -44,6 +44,10 @@ struct InputFoodView: View {
             }
             .padding(.horizontal)
         }
+        .padding()
+        .background {
+            Color.white
+        }
     }
 }
 

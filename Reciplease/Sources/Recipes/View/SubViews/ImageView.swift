@@ -40,14 +40,14 @@ struct ImageView: View {
 
     private func timeAndServingsInfo() -> some View {
         Rectangle()
-            .frame(width: 80, height: 60)
+            .frame(width: 100, height: 60)
             .foregroundStyle(CustomColors.main)
             .border(.white, width: 2)
             .overlay {
                 HStack(spacing: 10) {
                     VStack(spacing: 10) {
                         Text(String(recipe.servings))
-                        Text(String(recipe.time) + "m")
+                        Text(recipe.readableTime)
                     }
                     .lineLimit(1)
                     VStack(spacing: 10) {
@@ -62,10 +62,10 @@ struct ImageView: View {
     private func titleInfo() -> some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(recipe.name)
-                .font(.largeTitle)
+                .font(.title)
                 .fontWeight(.medium)
             Text(recipe.ingredients.joined(separator: ", "))
-                .font(.title2)
+                .font(.title3)
                 .fontWeight(.light)
         }
     }
@@ -99,5 +99,5 @@ private extension Localizable {
 }
 
 #Preview {
-    ImageView(recipe: .forPreview, height: 200)
+    ImageView(recipe: .raspberrySorbet, height: 200)
 }

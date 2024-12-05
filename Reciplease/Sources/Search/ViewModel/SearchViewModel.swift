@@ -12,6 +12,10 @@ final class SearchViewModel: ObservableObject {
 
     // MARK: - State
 
+    @Published var recipes: [RecipeModel] = []
+
+    @Published var showRecipes = false
+
     @Published var inputFoodText: String = ""
 
     @Published var foodList: [String]
@@ -50,7 +54,9 @@ final class SearchViewModel: ObservableObject {
         let food = foodList.joined(separator: " ")
 
         do {
-            let recipes = try await recipeAPIService.fetchRecipe(for: food)
+            let list = try await recipeAPIService.fetchRecipes(for: food)
+            recipes = Array(Set(list))
+            showRecipes = true
         } catch {
             if let recipeAPIError = error as? (any RecipeAPIError) {
                 NSLog(recipeAPIError.errorDescription ?? Localizable.undeterminedErrorDescription)

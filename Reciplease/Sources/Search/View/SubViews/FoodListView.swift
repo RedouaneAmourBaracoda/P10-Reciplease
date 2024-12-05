@@ -19,8 +19,6 @@ struct FoodListView: View {
         VStack {
             headerView()
             listView()
-            Spacer()
-            searchActionView()
         }
         .background {
             CustomColors.main.ignoresSafeArea()
@@ -59,22 +57,6 @@ struct FoodListView: View {
         }
         .padding(.bottom)
     }
-
-    private func searchActionView() -> some View {
-        Button {
-            Task {
-                await viewModel.getRecipes()
-            }
-        } label: {
-            Text(Localizable.searchForRecipesButtonTitle)
-                .font(.title2)
-                .foregroundStyle(.white)
-                .padding()
-                .background { CustomColors.secondary }
-                .clipShape(RoundedRectangle(cornerRadius: 5.0))
-                .padding()
-        }
-    }
 }
 
 private extension Localizable {
@@ -85,11 +67,6 @@ private extension Localizable {
 
     static let clearFoodListButtonTitle = NSLocalizedString(
         "search.food-list.clear-button.title",
-        comment: ""
-    )
-
-    static let searchForRecipesButtonTitle = NSLocalizedString(
-        "search.food-list.button.title",
         comment: ""
     )
 }

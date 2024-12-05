@@ -16,7 +16,7 @@ final class MockRecipeAPIService: RecipeAPIService {
 
     var fetchRecipeCallsCounter = 0
 
-    func fetchRecipe(for food: String) async throws -> [RecipeModel] {
+    func fetchRecipes(for food: String) async throws -> [RecipeModel] {
         fetchRecipeCallsCounter += 1
 
         guard let error else { return recipesToReturn }

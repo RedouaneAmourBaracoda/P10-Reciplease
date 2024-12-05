@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct RecipeListView: View {
+
+    @ObservedObject private var viewModel: RecipeListViewModel
+
+    init(viewModel: RecipeListViewModel) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
-        Text("Hello")
+        ScrollView {
+            VStack(spacing: 0) {
+                ForEach(viewModel.recipes, id: \.name) {
+                    ImageView(recipe: $0, height: 200)
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    RecipeListView()
+    RecipeListView(viewModel: .init(recipes: .forPreview))
 }
