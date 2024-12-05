@@ -1,5 +1,5 @@
 //
-//  RecipeView.swift
+//  RecipeDetailView.swift
 //  Reciplease
 //
 //  Created by Redouane on 05/12/2024.
@@ -7,9 +7,13 @@
 
 import SwiftUI
 
-struct RecipeView: View {
+struct RecipeDetailView: View {
 
-    let recipe: RecipeModel
+    @ObservedObject private var viewModel: RecipeDetailViewModel
+
+    init(viewModel: RecipeDetailViewModel) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         NavigationStack {
@@ -33,7 +37,7 @@ struct RecipeView: View {
     private func content() -> some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                ImageView(recipe: recipe, height: 300)
+                ImageView(recipe: viewModel.recipe, height: 300)
                 ingredients()
                 directionsButton()
                 Spacer()
@@ -45,7 +49,7 @@ struct RecipeView: View {
         Group {
             Text("Ingredients")
                 .font(.custom(CustomFonts.body, size: 40))
-            ForEach(recipe.directions, id: \.self) { direction in
+            ForEach(viewModel.recipe.directions, id: \.self) { direction in
                 Text("- \(direction)")
                     .font(.custom(CustomFonts.body, size: 25))
             }
@@ -76,5 +80,5 @@ struct RecipeView: View {
 }
 
 #Preview {
-    RecipeView(recipe: .raspberrySorbet)
+    RecipeDetailView(viewModel: .init(recipe: .raspberrySorbet))
 }

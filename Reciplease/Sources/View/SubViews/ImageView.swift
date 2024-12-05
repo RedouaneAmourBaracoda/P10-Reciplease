@@ -9,14 +9,31 @@ import SwiftUI
 
 struct ImageView: View {
 
-    let recipe: RecipeModel
+    let title: String
 
-    let height: CGFloat
+    let ingredients: String
+
+    let servings: String
+
+    let time: String
+
+    let imageURL: String
+
+    let imageHeight: CGFloat
+
+    init(title: String, ingredients: String, servings: String, time: String, imageURL: String, imageHeight: CGFloat) {
+        self.title = title
+        self.ingredients = ingredients
+        self.servings = servings
+        self.time = time
+        self.imageURL = imageURL
+        self.imageHeight = imageHeight
+    }
 
     var body: some View {
         RoundedRectangle(cornerRadius: 1.0)
             .stroke()
-            .frame(height: height)
+            .frame(height: imageHeight)
             .overlay {
                 overlayContent()
             }
@@ -41,8 +58,8 @@ struct ImageView: View {
     private func timeAndServingsInfo() -> some View {
         HStack(spacing: 10) {
             VStack(spacing: 10) {
-                Text(String(recipe.servings))
-                Text(recipe.readableTime)
+                Text(servings)
+                Text(time)
             }
             .lineLimit(1)
             VStack(spacing: 10) {
@@ -61,17 +78,17 @@ struct ImageView: View {
 
     private func titleInfo() -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text(recipe.name)
+            Text(title)
                 .font(.title)
                 .fontWeight(.medium)
-            Text(recipe.ingredients.joined(separator: ", "))
+            Text(ingredients)
                 .font(.title3)
                 .fontWeight(.light)
         }
     }
 
     private func asyncImage() -> some View {
-        AsyncImage(url: URL(string: recipe.imageURL)) {
+        AsyncImage(url: URL(string: imageURL)) {
             imageLoadingResult(phase: $0)
         }
     }
@@ -88,6 +105,15 @@ struct ImageView: View {
         @unknown default:
             Text(Localizable.undeterminedErrorDescription)
         }
+    }
+
+    init(recipe: RecipeInfo, height: CGFloat) {
+        self.title = recipe.name
+        self.ingredients = recipe.ingredients.joined(separator: ", ")
+        self.servings = String(recipe.servings)
+        self.time = recipe.readableTime
+        self.imageURL = recipe.imageURL
+        self.imageHeight = height
     }
 }
 

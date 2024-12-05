@@ -1,5 +1,5 @@
 //
-//  RecipeModel.swift
+//  Recipes.swift
 //  Reciplease
 //
 //  Created by Redouane on 03/12/2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RecipeModel: Equatable, Hashable {
+struct RecipeInfo: Equatable, Hashable {
     let name: String
     let ingredients: [String]
     let servings: Int

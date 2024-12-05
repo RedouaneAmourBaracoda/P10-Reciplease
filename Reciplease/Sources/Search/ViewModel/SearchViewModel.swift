@@ -12,15 +12,21 @@ final class SearchViewModel: ObservableObject {
 
     // MARK: - State
 
-    @Published var recipes: [RecipeModel] = []
+    @Published var recipes: [RecipeInfo] = []
+
+    @Published var searchInProgress = false
 
     @Published var showRecipes = false
 
     @Published var inputFoodText: String = ""
 
-    @Published var foodList: [String]
+    @Published var foodList: [String] = []
 
     @Published var shouldPresentAlert = false
+
+    var isSearchButtonDisabled: Bool {
+        searchInProgress || foodList.isEmpty
+    }
 
     var errorMessage: String = ""
 
@@ -49,13 +55,13 @@ final class SearchViewModel: ObservableObject {
 
     func getRecipes() async {
 
-        guard !foodList.isEmpty else { return }
-
         let food = foodList.joined(separator: " ")
 
+        searchInProgress = true
+
         do {
-            let list = try await recipeAPIService.fetchRecipes(for: food)
-            recipes = Array(Set(list))
+            recipes = try await recipeAPIService.fetchRecipes(for: food)
+            searchInProgress = false
             showRecipes = true
         } catch {
             if let recipeAPIError = error as? (any RecipeAPIError) {
@@ -70,6 +76,7 @@ final class SearchViewModel: ObservableObject {
     }
 
     func resetState() {
+        searchInProgress = false
         showRecipes = false
         foodList.removeAll()
     }

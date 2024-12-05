@@ -1,5 +1,5 @@
 //
-//  RecipeModel+Preview.swift
+//  RecipeInfo+Preview.swift
 //  Reciplease
 //
 //  Created by Redouane on 03/12/2024.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension RecipeModel {
-    static let lemonSimpleSyrup = RecipeModel(
+extension RecipeInfo {
+    static let lemonSimpleSyrup = RecipeInfo(
         name: "Lemon simple syrup",
         ingredients: ["sugar", "lemon", "zest"],
         servings: 4,
@@ -17,7 +17,7 @@ extension RecipeModel {
         imageURL: "https://www.splenda.com/wp-content/uploads/2020/09/lemon-simple-syrup-2000x1000.jpg"
     )
 
-    static let orangeSherbetBombe = RecipeModel(
+    static let orangeSherbetBombe = RecipeInfo(
         name: "Orange sherbet bombe",
         ingredients: ["orange sherbet", "vanilla ice cream"],
         servings: 12,
@@ -26,7 +26,7 @@ extension RecipeModel {
         imageURL: "https://amagicalmess.com/wp-content/uploads/2020/12/orange-sherbet-punch-123.jpg"
     )
 
-    static let raspberrySorbet = RecipeModel(
+    static let raspberrySorbet = RecipeInfo(
         name: "Raspberry sorbet",
         ingredients: ["raspberries", "sugar", "lemon juice"],
         servings: 10,
@@ -36,10 +36,6 @@ extension RecipeModel {
     )
 }
 
-extension Array<RecipeModel> {
-    static let forPreview: Self = [
-        .lemonSimpleSyrup,
-        .orangeSherbetBombe,
-        .raspberrySorbet
-    ]
+extension Array<RecipeInfo> {
+    static let forPreview: [RecipeInfo] = [.lemonSimpleSyrup, .orangeSherbetBombe, .raspberrySorbet]
 }

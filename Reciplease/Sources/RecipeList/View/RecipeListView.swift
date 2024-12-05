@@ -32,7 +32,7 @@ struct RecipeListView: View {
             VStack(spacing: 0) {
                 ForEach(viewModel.recipes, id: \.name) { recipe in
                     NavigationLink {
-                        RecipeView(recipe: recipe)
+                        RecipeDetailView(viewModel: .init(recipe: recipe))
                     } label: {
                         ImageView(recipe: recipe, height: 200)
                     }

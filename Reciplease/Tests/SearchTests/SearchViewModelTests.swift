@@ -26,7 +26,7 @@ final class SearchViewModelTests: XCTestCase {
 
         // Given.
 
-        searchViewModel.foodList = ["Cheese", "beef", "tomato"]
+        searchViewModel.foodList = .random()
 
         // When.
 
@@ -41,9 +41,11 @@ final class SearchViewModelTests: XCTestCase {
 
         // Given.
 
-        searchViewModel.foodList = ["Cheese", "beef", "tomato"]
+        searchViewModel.foodList = .random()
 
         searchViewModel.showRecipes = true
+
+        searchViewModel.searchInProgress = true
 
         // When.
 
@@ -54,6 +56,8 @@ final class SearchViewModelTests: XCTestCase {
         XCTAssertTrue(searchViewModel.foodList.isEmpty)
 
         XCTAssertFalse(searchViewModel.showRecipes)
+
+        XCTAssertFalse(searchViewModel.searchInProgress)
     }
 
     func testAddWhenInputFoodIsEmpty() async {
@@ -74,8 +78,8 @@ final class SearchViewModelTests: XCTestCase {
     func testAddWhenInputFoodIsNotEmpty() async {
 
         // Given.
-
-        searchViewModel.inputFoodText = "Butter"
+        let food: String = .random()
+        searchViewModel.inputFoodText = food
 
         // When.
 
@@ -83,68 +87,95 @@ final class SearchViewModelTests: XCTestCase {
 
         // Then.
 
-        XCTAssertTrue(searchViewModel.foodList.contains("Butter"))
+        XCTAssertTrue(searchViewModel.foodList.contains(food))
 
         XCTAssertTrue(searchViewModel.inputFoodText.isEmpty)
     }
 
-    func testAddWhenMultipleInputFood() async {
+    func testAddWithFood() async {
 
         // Given.
 
-        searchViewModel.inputFoodText = "Butter"
+        let food: [String] = .random()
 
-        // When.
+        food.forEach {
 
-        searchViewModel.add()
+            // When.
 
-        XCTAssertTrue(searchViewModel.inputFoodText.isEmpty)
+            searchViewModel.inputFoodText = $0
 
-        searchViewModel.inputFoodText = "Peanut"
+            searchViewModel.add()
 
-        searchViewModel.add()
-
-        XCTAssertTrue(searchViewModel.inputFoodText.isEmpty)
-
-        searchViewModel.inputFoodText = "Bread"
-
-        searchViewModel.add()
-
-        XCTAssertTrue(searchViewModel.inputFoodText.isEmpty)
+            XCTAssertTrue(searchViewModel.inputFoodText.isEmpty)
+        }
 
         // Then.
 
-        XCTAssertEqual(searchViewModel.foodList, ["Butter", "Peanut", "Bread"])
+        XCTAssertEqual(searchViewModel.foodList, food)
     }
 
-    func testGetRecipesWhenFoodListIsEmpty() async {
+    func testButtonIsDisabledWhenFoodListIsEmpty() async {
 
         // Given.
 
         searchViewModel.foodList = []
 
-        // When.
-
-        await searchViewModel.getRecipes()
-
         // Then.
 
-        XCTAssertEqual(recipeAPIService.fetchRecipeCallsCounter, 0)
-
-        XCTAssertTrue(searchViewModel.recipes.isEmpty)
+        XCTAssertTrue(searchViewModel.isSearchButtonDisabled)
     }
 
-    func testGetRecipesWhenEdamammAPIReturnsError() async {
+    func testSearchButtonIsEnabledWhenFoodListIsNotEmpty() async {
 
         // Given.
 
-        searchViewModel.inputFoodText = "Butter"
+        searchViewModel.inputFoodText = .random()
+
+        searchViewModel.add()
+
+        // Then.
+
+        XCTAssertFalse(searchViewModel.isSearchButtonDisabled)
+    }
+
+    func testSearchButtonIsDisabledWhenFoodListIsNotEmptyAndSearchIsInProgress() async {
+
+        // Given.
+
+        let food: String = .random()
+
+        searchViewModel.inputFoodText = food
+
+        searchViewModel.add()
+
+        XCTAssertFalse(searchViewModel.isSearchButtonDisabled)
+
+        // When.
+
+        searchViewModel.searchInProgress = true
+
+        // Then.
+
+        XCTAssertTrue(searchViewModel.isSearchButtonDisabled)
+    }
+
+    func testGetRecipesWhenEdamamAPIReturnsError() async {
+
+        // Given.
+
+        let food: String = .random()
+
+        searchViewModel.inputFoodText = food
 
         searchViewModel.add()
 
         XCTAssertTrue(searchViewModel.inputFoodText.isEmpty)
 
-        XCTAssertTrue(searchViewModel.foodList.contains("Butter"))
+        XCTAssertTrue(searchViewModel.foodList.contains(food))
+
+        XCTAssertFalse(searchViewModel.searchInProgress)
+
+        XCTAssertFalse(searchViewModel.isSearchButtonDisabled)
 
         let error = EdamamAPIError.allCases.randomElement()
 
@@ -163,19 +194,31 @@ final class SearchViewModelTests: XCTestCase {
         XCTAssertEqual(searchViewModel.errorMessage, error?.userFriendlyDescription)
 
         XCTAssertTrue(searchViewModel.recipes.isEmpty)
+
+        XCTAssertFalse(searchViewModel.searchInProgress)
+
+        XCTAssertTrue(searchViewModel.foodList.isEmpty)
+
+        XCTAssertTrue(searchViewModel.isSearchButtonDisabled)
     }
 
     func testGetRecipesWhenAPIReturnsOtherError() async {
 
         // Given.
 
-        searchViewModel.inputFoodText = "Butter"
+        let food: String = .random()
+
+        searchViewModel.inputFoodText = food
 
         searchViewModel.add()
 
         XCTAssertTrue(searchViewModel.inputFoodText.isEmpty)
 
-        XCTAssertTrue(searchViewModel.foodList.contains("Butter"))
+        XCTAssertTrue(searchViewModel.foodList.contains(food))
+
+        XCTAssertFalse(searchViewModel.searchInProgress)
+
+        XCTAssertFalse(searchViewModel.isSearchButtonDisabled)
 
         // swiftlint:disable:next discouraged_direct_init
         let error = NSError()
@@ -195,31 +238,40 @@ final class SearchViewModelTests: XCTestCase {
         XCTAssertEqual(searchViewModel.errorMessage, Localizable.undeterminedErrorDescription)
 
         XCTAssertTrue(searchViewModel.recipes.isEmpty)
+
+        XCTAssertFalse(searchViewModel.searchInProgress)
+
+        XCTAssertTrue(searchViewModel.foodList.isEmpty)
+
+        XCTAssertTrue(searchViewModel.isSearchButtonDisabled)
     }
 
-    /*
     func testGetRecipesIsSuccessWhenNoErrors() async {
-        // Given
 
-        weatherViewModel.inputCityName = "Paris"
+        // Given.
 
-        let weather: Weather = .random()
+        let expectedRecipes: [RecipeInfo] = .random()
 
-        weatherAPIService.weatherToReturn = weather
+        recipeAPIService.recipesToReturn = expectedRecipes
 
-        // When
+        // When.
 
-        await weatherViewModel.getWeather()
+        await searchViewModel.getRecipes()
 
-        // Then
+        // Then.
 
-        XCTAssertEqual(weatherAPIService.fetchWeatherCallsCounter, 1)
+        XCTAssertEqual(recipeAPIService.fetchRecipeCallsCounter, 1)
 
-        XCTAssertEqual(weatherViewModel.weather, weather)
+        XCTAssertEqual(searchViewModel.recipes, expectedRecipes)
 
-        XCTAssertFalse(weatherViewModel.shouldPresentAlert)
+        XCTAssertTrue(searchViewModel.showRecipes)
 
-        XCTAssertTrue(weatherViewModel.errorMessage.isEmpty)
+        XCTAssertFalse(searchViewModel.shouldPresentAlert)
+
+        XCTAssertTrue(searchViewModel.errorMessage.isEmpty)
+
+        XCTAssertFalse(searchViewModel.searchInProgress)
+
+        XCTAssertTrue(searchViewModel.isSearchButtonDisabled)
     }
-     */
 }

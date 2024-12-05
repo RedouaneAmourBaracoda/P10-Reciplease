@@ -38,19 +38,31 @@ struct SearchView: View {
     }
 
     private func searchActionView() -> some View {
-        Button {
-            Task {
-                await viewModel.getRecipes()
+        VStack {
+            if viewModel.searchInProgress {
+                ProgressView()
+                    .progressViewStyle(.circular)
+                    .padding()
+                    .background {
+                        Circle()
+                            .foregroundStyle(.white)
+                    }
             }
-        } label: {
-            Text(Localizable.searchForRecipesButtonTitle)
-                .font(.title2)
-                .foregroundStyle(.white)
-                .padding(.vertical)
-                .padding(.horizontal, 80)
-                .background { CustomColors.secondary }
-                .clipShape(RoundedRectangle(cornerRadius: 5.0))
-                .padding()
+            Button {
+                Task {
+                    await viewModel.getRecipes()
+                }
+            } label: {
+                Text(Localizable.searchForRecipesButtonTitle)
+                    .font(.title2)
+                    .foregroundStyle(.white)
+                    .padding(.vertical)
+                    .padding(.horizontal, 80)
+                    .background { viewModel.isSearchButtonDisabled ? Color.gray : CustomColors.secondary }
+                    .clipShape(RoundedRectangle(cornerRadius: 5.0))
+                    .padding()
+            }
+            .disabled(viewModel.isSearchButtonDisabled)
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  RecipeModel+ReadableTime.swift
+//  RecipeInfo+ReadableTime.swift
 //  Reciplease
 //
 //  Created by Redouane on 05/12/2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension RecipeModel {
+extension RecipeInfo {
     var readableTime: String {
 
         guard time > 0 else { return "-"}
