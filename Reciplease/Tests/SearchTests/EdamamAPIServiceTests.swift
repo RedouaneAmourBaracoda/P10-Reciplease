@@ -54,6 +54,20 @@ final class EdamamAPIServiceTests: XCTestCase {
         )
     }
 
+    func testNetworkCallSuccessWithEmptyRecipes() async throws {
+        try await testEdamamAPIError(
+            data: Data("""
+            {
+                "q": "pea tomato bread",
+                "count": 0,
+                "hits": []
+            }
+            """.utf8),
+            statusCode: 200,
+            testedError: .invalidFood
+        )
+    }
+
     // swiftlint:disable:next function_body_length
     func testNetworkCallSuccess() async throws {
 
@@ -109,7 +123,7 @@ final class EdamamAPIServiceTests: XCTestCase {
         // Then.
 
         do {
-            let actualResult = try await recipeAPIService.fetchRecipe(for: "")
+            let actualResult = try await recipeAPIService.fetchRecipes(for: "")
             let expectedResult = EdamamAPIResponse(
                 q: "pea tomato bread",
                 count: 1,
@@ -127,21 +141,14 @@ final class EdamamAPIServiceTests: XCTestCase {
                                     Ingredient(
                                         text: "8 ears fresh corn, stripped from the cob with a knife",
                                         quantity: 8.0,
-                                        food: "fresh corn",
-                                        weight: 816.0,
-                                        foodCategory: "vegetables",
-                                        foodId: "",
-                                        image: ""
+                                        food: "fresh corn"
                                     )
                                 ],
-                                calories: 1544.8940499999999,
-                                totalWeight: 2909.003159354124,
-                                totalTime: 15.0,
-                                cuisineType: ["south american"]
+                                totalTime: 15.0
                             )
                     )
                 ]
-            )
+            ).toRecipes
 
             XCTAssertEqual(actualResult, expectedResult)
         } catch {
@@ -149,7 +156,7 @@ final class EdamamAPIServiceTests: XCTestCase {
         }
     }
 
-    private func testEdamamAPIError(statusCode: Int, testedError: EdamamAPIError) async throws {
+    private func testEdamamAPIError(data: Data = Data(), statusCode: Int, testedError: EdamamAPIError) async throws {
 
         MockURLProtocol.requestHandler = { request in
             XCTAssertNotNil(request.url)
@@ -160,14 +167,14 @@ final class EdamamAPIServiceTests: XCTestCase {
                 headerFields: nil
             )!
 
-            let mockData = Data()
+            let mockData = data
             return (mockResponse, mockData)
         }
 
         // Then.
 
         do {
-            _ = try await recipeAPIService.fetchRecipe(for: "")
+            _ = try await recipeAPIService.fetchRecipes(for: "")
         } catch let error as EdamamAPIError {
             XCTAssertTrue(error == testedError)
             XCTAssertEqual(error.errorDescription, testedError.errorDescription)

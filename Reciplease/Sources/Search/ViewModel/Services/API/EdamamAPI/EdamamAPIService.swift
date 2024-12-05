@@ -50,9 +50,11 @@ struct EdamamAPIService: RecipeAPIService {
 
         case .success:
 
-            return try JSONDecoder()
-                .decode(EdamamAPIResponse.self, from: data)
-                .toRecipes
+            let recipes = try JSONDecoder().decode(EdamamAPIResponse.self, from: data).toRecipes
+
+            guard !recipes.isEmpty else { throw EdamamAPIError.invalidFood }
+
+            return recipes
 
         case let .failure(failure):
 

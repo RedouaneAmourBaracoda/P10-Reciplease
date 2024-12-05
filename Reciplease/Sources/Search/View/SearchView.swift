@@ -32,7 +32,7 @@ struct SearchView: View {
                     RecipeListView(viewModel: .init(recipes: viewModel.recipes))
                 }
         }
-        .onAppear { viewModel.showRecipes = false }
+        .onAppear { viewModel.resetState() }
         .padding(.top)
         .padding(.bottom, 0.5)
     }

@@ -36,78 +36,169 @@ final class SearchViewModelTests: XCTestCase {
 
         XCTAssertTrue(searchViewModel.foodList.isEmpty)
     }
-/*
-    func testNoFetchWhenInputCityNameIsEmpty() async {
+
+    func testResetState() async {
 
         // Given.
 
-        weatherViewModel.inputCityName = ""
+        searchViewModel.foodList = ["Cheese", "beef", "tomato"]
+
+        searchViewModel.showRecipes = true
 
         // When.
 
-        await weatherViewModel.getWeather()
+        searchViewModel.resetState()
 
         // Then.
 
-        XCTAssertEqual(weatherAPIService.fetchWeatherCallsCounter, 0)
+        XCTAssertTrue(searchViewModel.foodList.isEmpty)
 
-        XCTAssertNil(weatherViewModel.weather)
+        XCTAssertFalse(searchViewModel.showRecipes)
     }
 
-    func testGetWeatherWhenOpenWeatherAPIReturnsError() async {
+    func testAddWhenInputFoodIsEmpty() async {
 
         // Given.
 
-        weatherViewModel.inputCityName = "Paris"
-
-        let error = OpenWeatherAPIError.allCases.randomElement()
-
-        weatherAPIService.error = error
+        searchViewModel.inputFoodText = ""
 
         // When.
 
-        await weatherViewModel.getWeather()
+        searchViewModel.add()
 
         // Then.
 
-        XCTAssertEqual(weatherAPIService.fetchWeatherCallsCounter, 1)
-
-        XCTAssertTrue(weatherViewModel.shouldPresentAlert)
-
-        XCTAssertEqual(weatherViewModel.errorMessage, error?.userFriendlyDescription)
-
-        XCTAssertNil(weatherViewModel.weather)
+        XCTAssertTrue(searchViewModel.foodList.isEmpty)
     }
 
-    // Testing when the WeatherAPI returns a random error.
-    func testGetWeatherWhenAPIReturnsOtherError() async {
+    func testAddWhenInputFoodIsNotEmpty() async {
 
         // Given.
 
-        weatherViewModel.inputCityName = "Paris"
+        searchViewModel.inputFoodText = "Butter"
+
+        // When.
+
+        searchViewModel.add()
+
+        // Then.
+
+        XCTAssertTrue(searchViewModel.foodList.contains("Butter"))
+
+        XCTAssertTrue(searchViewModel.inputFoodText.isEmpty)
+    }
+
+    func testAddWhenMultipleInputFood() async {
+
+        // Given.
+
+        searchViewModel.inputFoodText = "Butter"
+
+        // When.
+
+        searchViewModel.add()
+
+        XCTAssertTrue(searchViewModel.inputFoodText.isEmpty)
+
+        searchViewModel.inputFoodText = "Peanut"
+
+        searchViewModel.add()
+
+        XCTAssertTrue(searchViewModel.inputFoodText.isEmpty)
+
+        searchViewModel.inputFoodText = "Bread"
+
+        searchViewModel.add()
+
+        XCTAssertTrue(searchViewModel.inputFoodText.isEmpty)
+
+        // Then.
+
+        XCTAssertEqual(searchViewModel.foodList, ["Butter", "Peanut", "Bread"])
+    }
+
+    func testGetRecipesWhenFoodListIsEmpty() async {
+
+        // Given.
+
+        searchViewModel.foodList = []
+
+        // When.
+
+        await searchViewModel.getRecipes()
+
+        // Then.
+
+        XCTAssertEqual(recipeAPIService.fetchRecipeCallsCounter, 0)
+
+        XCTAssertTrue(searchViewModel.recipes.isEmpty)
+    }
+
+    func testGetRecipesWhenEdamammAPIReturnsError() async {
+
+        // Given.
+
+        searchViewModel.inputFoodText = "Butter"
+
+        searchViewModel.add()
+
+        XCTAssertTrue(searchViewModel.inputFoodText.isEmpty)
+
+        XCTAssertTrue(searchViewModel.foodList.contains("Butter"))
+
+        let error = EdamamAPIError.allCases.randomElement()
+
+        recipeAPIService.error = error
+
+        // When.
+
+        await searchViewModel.getRecipes()
+
+        // Then.
+
+        XCTAssertEqual(recipeAPIService.fetchRecipeCallsCounter, 1)
+
+        XCTAssertTrue(searchViewModel.shouldPresentAlert)
+
+        XCTAssertEqual(searchViewModel.errorMessage, error?.userFriendlyDescription)
+
+        XCTAssertTrue(searchViewModel.recipes.isEmpty)
+    }
+
+    func testGetRecipesWhenAPIReturnsOtherError() async {
+
+        // Given.
+
+        searchViewModel.inputFoodText = "Butter"
+
+        searchViewModel.add()
+
+        XCTAssertTrue(searchViewModel.inputFoodText.isEmpty)
+
+        XCTAssertTrue(searchViewModel.foodList.contains("Butter"))
 
         // swiftlint:disable:next discouraged_direct_init
         let error = NSError()
 
-        weatherAPIService.error = error
+        recipeAPIService.error = error
 
         // When.
 
-        await weatherViewModel.getWeather()
+        await searchViewModel.getRecipes()
 
         // Then.
 
-        XCTAssertEqual(weatherAPIService.fetchWeatherCallsCounter, 1)
+        XCTAssertEqual(recipeAPIService.fetchRecipeCallsCounter, 1)
 
-        XCTAssertTrue(weatherViewModel.shouldPresentAlert)
+        XCTAssertTrue(searchViewModel.shouldPresentAlert)
 
-        XCTAssertEqual(weatherViewModel.errorMessage, Localizable.Weather.undeterminedErrorDescription)
+        XCTAssertEqual(searchViewModel.errorMessage, Localizable.undeterminedErrorDescription)
 
-        XCTAssertNil(weatherViewModel.weather)
+        XCTAssertTrue(searchViewModel.recipes.isEmpty)
     }
 
-    func testGetWeatherIsSuccessWhenNoErrors() async {
-
+    /*
+    func testGetRecipesIsSuccessWhenNoErrors() async {
         // Given
 
         weatherViewModel.inputCityName = "Paris"
@@ -130,5 +221,5 @@ final class SearchViewModelTests: XCTestCase {
 
         XCTAssertTrue(weatherViewModel.errorMessage.isEmpty)
     }
- */
+     */
 }

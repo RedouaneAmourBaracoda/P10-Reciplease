@@ -46,6 +46,16 @@
         }
       }
     },
+    "recipe.edamam-api.errors.invalid-food.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We couldn't find any matches for this food. Double check your search for any typos or spelling errors - or try a different search term."
+          }
+        }
+      }
+    },
     "recipe.edamam-api.errors.invalid-request.description" : {
       "localizations" : {
         "en" : {
@@ -101,7 +111,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "The limit of requests to weather services has been exceeded."
+            "value" : "The limit of requests to recipes services has been exceeded."
           }
         }
       }

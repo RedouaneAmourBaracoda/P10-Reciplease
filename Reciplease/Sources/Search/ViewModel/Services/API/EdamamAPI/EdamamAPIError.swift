@@ -7,8 +7,9 @@
 
 import Foundation
 
-enum EdamamAPIError: Error {
+enum EdamamAPIError: RecipeAPIError {
     case invalidURL
+    case invalidFood
     case badRequest
     case unauthorized
     case notFound
@@ -20,6 +21,8 @@ enum EdamamAPIError: Error {
         switch self {
         case .invalidURL:
             return Localizable.invalidURLDescription
+        case .invalidFood:
+            return Localizable.invalidFoodDescription
         case .badRequest:
             return Localizable.badRequestDescription
         case .unauthorized:
@@ -37,6 +40,8 @@ enum EdamamAPIError: Error {
 
     var userFriendlyDescription: String {
         switch self {
+        case .invalidFood:
+            return Localizable.invalidFoodDescription
         case .invalidURL, .unauthorized, .internalError, .invalidRequest:
             return Localizable.invalidRequestUserDescription
         case .badRequest, .notFound:
@@ -72,6 +77,11 @@ enum EdamamAPIError: Error {
 private extension Localizable {
     static let invalidURLDescription = NSLocalizedString(
         "recipe.edamam-api.errors.invalid-url.description",
+        comment: ""
+    )
+
+    static let invalidFoodDescription = NSLocalizedString(
+        "recipe.edamam-api.errors.invalid-food.description",
         comment: ""
     )
 

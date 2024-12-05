@@ -65,6 +65,12 @@ final class SearchViewModel: ObservableObject {
                 errorMessage = Localizable.undeterminedErrorDescription
             }
             shouldPresentAlert = true
+            resetState()
         }
+    }
+
+    func resetState() {
+        showRecipes = false
+        foodList.removeAll()
     }
 }
