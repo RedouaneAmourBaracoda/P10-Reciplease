@@ -14,12 +14,12 @@ extension RecipeModel {
 
         let totalSeconds = time * 60
 
-        let result = (totalSeconds / 3600, (totalSeconds % 3600) / 60) // Hours, Minutes.
+        let (hours, minutes) = (totalSeconds / 3600, (totalSeconds % 3600) / 60)
 
-        let hours = result.0 == 0 ? "" : String(result.0) + "h"
+        let hoursString = hours == 0 ? "" : String(hours) + "h"
 
-        let minutes = result.1 == 0 ? "" : String(result.1) + "m"
+        let minutesString = minutes == 0 ? "" : String(minutes) + "m"
 
-        return hours + minutes
+        return hoursString + minutesString
     }
 }

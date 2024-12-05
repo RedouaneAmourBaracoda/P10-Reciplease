@@ -39,24 +39,24 @@ struct ImageView: View {
     }
 
     private func timeAndServingsInfo() -> some View {
-        Rectangle()
-            .frame(width: 100, height: 60)
-            .foregroundStyle(CustomColors.main)
-            .border(.white, width: 2)
-            .overlay {
-                HStack(spacing: 10) {
-                    VStack(spacing: 10) {
-                        Text(String(recipe.servings))
-                        Text(recipe.readableTime)
-                    }
-                    .lineLimit(1)
-                    VStack(spacing: 10) {
-                        Image(systemName: "fork.knife.circle")
-                        Image(systemName: "clock")
-                    }
-                }
-                .foregroundStyle(.white)
+        HStack(spacing: 10) {
+            VStack(spacing: 10) {
+                Text(String(recipe.servings))
+                Text(recipe.readableTime)
             }
+            .lineLimit(1)
+            VStack(spacing: 10) {
+                Image(systemName: "fork.knife.circle")
+                Image(systemName: "clock")
+            }
+        }
+        .foregroundStyle(.white)
+        .frame(width: 100, height: 80)
+        .background {
+            Rectangle()
+                .foregroundStyle(CustomColors.main)
+                .border(.white)
+        }
     }
 
     private func titleInfo() -> some View {
