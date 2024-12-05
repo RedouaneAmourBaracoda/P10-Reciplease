@@ -18,6 +18,7 @@ struct SearchView: View {
                 .alert(isPresented: $viewModel.shouldPresentAlert) {
                     Alert(title: Text(Localizable.errorAlertTitle), message: Text(viewModel.errorMessage))
                 }
+                .background { CustomColors.main.ignoresSafeArea() }
         }
     }
 
@@ -31,10 +32,7 @@ struct SearchView: View {
                     RecipeListView(viewModel: .init(recipes: viewModel.recipes))
                 }
         }
-        .onAppear {
-            viewModel.showRecipes = false
-        }
-        .background { CustomColors.main }
+        .onAppear { viewModel.showRecipes = false }
         .padding(.top)
         .padding(.bottom, 0.5)
     }
@@ -56,7 +54,7 @@ struct SearchView: View {
     }
 }
 
-private extension Localizable {
+extension Localizable {
     static let navigationTitle = NSLocalizedString(
         "search.navigation.title",
         comment: ""

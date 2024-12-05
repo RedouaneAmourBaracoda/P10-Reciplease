@@ -16,10 +16,18 @@ struct RecipeListView: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                ForEach(viewModel.recipes, id: \.name) {
-                    ImageView(recipe: $0, height: 200)
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 0) {
+                    ForEach(viewModel.recipes, id: \.name) {
+                        ImageView(recipe: $0, height: 200)
+                    }
+                }
+            }
+            .customNavigationBar(navigationTitle: Localizable.navigationTitle)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Text("Back").opacity(0)
                 }
             }
         }
