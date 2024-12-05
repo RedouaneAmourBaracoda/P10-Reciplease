@@ -103,8 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				B8DD82152CF298CA00BCFC22 /* EdamamAPIServiceTests.swift */,
-				B858B18F2CFF8594001B4A10 /* SearchViewModelTests.swift */,
 				B858B1922CFF8725001B4A10 /* MockRecipeAPIService.swift */,
+				B858B18F2CFF8594001B4A10 /* SearchViewModelTests.swift */,
 			);
 			path = SearchTests;
 			sourceTree = "<group>";

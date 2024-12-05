@@ -26,11 +26,11 @@ final class SearchViewModel: ObservableObject {
 
     // MARK: - Services.
 
-    private let recipeAPIService: EdamamAPIService
+    private let recipeAPIService: RecipeAPIService
 
     // MARK: - Initializer.
 
-    init(recipeAPIService: EdamamAPIService = EdamamAPIService(), foodList: [String] = []) {
+    init(recipeAPIService: RecipeAPIService = EdamamAPIService(), foodList: [String] = []) {
         self.recipeAPIService = recipeAPIService
         self.foodList = foodList
     }

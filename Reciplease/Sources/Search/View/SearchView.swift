@@ -46,7 +46,8 @@ struct SearchView: View {
             Text(Localizable.searchForRecipesButtonTitle)
                 .font(.title2)
                 .foregroundStyle(.white)
-                .padding()
+                .padding(.vertical)
+                .padding(.horizontal, 80)
                 .background { CustomColors.secondary }
                 .clipShape(RoundedRectangle(cornerRadius: 5.0))
                 .padding()

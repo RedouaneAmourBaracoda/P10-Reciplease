@@ -7,36 +7,36 @@
 
 @testable import Reciplease
 import XCTest
-/*
+
 @MainActor
 final class SearchViewModelTests: XCTestCase {
 
-    var weatherViewModel: WeatherViewModel!
+    var searchViewModel: SearchViewModel!
 
-    var weatherAPIService: MockWeatherAPIService!
+    var recipeAPIService: MockRecipeAPIService!
 
     override func setUpWithError() throws {
 
-        weatherAPIService = MockWeatherAPIService()
+        recipeAPIService = MockRecipeAPIService()
 
-        weatherViewModel = .init(weatherAPIService: weatherAPIService)
+        searchViewModel = .init(recipeAPIService: recipeAPIService)
     }
 
     func testClear() async {
 
         // Given.
 
-        weatherViewModel.inputCityName = "Paris"
+        searchViewModel.foodList = ["Cheese", "beef", "tomato"]
 
         // When.
 
-        weatherViewModel.clear()
+        searchViewModel.clear()
 
         // Then.
 
-        XCTAssertTrue(weatherViewModel.inputCityName.isEmpty)
+        XCTAssertTrue(searchViewModel.foodList.isEmpty)
     }
-
+/*
     func testNoFetchWhenInputCityNameIsEmpty() async {
 
         // Given.
@@ -130,5 +130,5 @@ final class SearchViewModelTests: XCTestCase {
 
         XCTAssertTrue(weatherViewModel.errorMessage.isEmpty)
     }
+ */
 }
-*/
