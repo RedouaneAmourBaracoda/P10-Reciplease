@@ -10,6 +10,12 @@
     "Back" : {
 
     },
+    "Get directions" : {
+
+    },
+    "Ingredients" : {
+
+    },
     "recipe.edamam-api.errors.bad-request.description" : {
       "localizations" : {
         "en" : {

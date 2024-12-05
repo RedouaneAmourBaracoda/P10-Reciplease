@@ -17,17 +17,26 @@ struct RecipeListView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(spacing: 0) {
-                    ForEach(viewModel.recipes, id: \.name) {
-                        ImageView(recipe: $0, height: 200)
+            content()
+                .customNavigationBar(navigationTitle: Localizable.navigationTitle)
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Text("Back").opacity(0)
                     }
                 }
-            }
-            .customNavigationBar(navigationTitle: Localizable.navigationTitle)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Text("Back").opacity(0)
+        }
+    }
+
+    private func content() -> some View {
+        ScrollView {
+            VStack(spacing: 0) {
+                ForEach(viewModel.recipes, id: \.name) { recipe in
+                    NavigationLink {
+                        RecipeView(recipe: recipe)
+                    } label: {
+                        ImageView(recipe: recipe, height: 200)
+                    }
+                    .buttonStyle(.plain)
                 }
             }
         }
