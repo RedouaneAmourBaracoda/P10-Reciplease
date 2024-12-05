@@ -16,10 +16,12 @@ extension RecipeModel {
 
         let (hours, minutes) = (totalSeconds / 3600, (totalSeconds % 3600) / 60)
 
-        let hoursString = hours == 0 ? "" : String(hours) + "h"
+        let hoursString = hours == 0 ? "" : "~" + String(hours) + "h"
 
         let minutesString = minutes == 0 ? "" : String(minutes) + "m"
 
-        return hoursString + minutesString
+        let output = hoursString.isEmpty ? minutesString : hoursString
+
+        return output
     }
 }

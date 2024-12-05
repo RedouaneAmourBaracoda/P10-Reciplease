@@ -51,7 +51,7 @@ struct ImageView: View {
             }
         }
         .foregroundStyle(.white)
-        .frame(width: 100, height: 80)
+        .frame(width: 70, height: 60)
         .background {
             Rectangle()
                 .foregroundStyle(CustomColors.main)
