@@ -250,7 +250,7 @@ final class SearchViewModelTests: XCTestCase {
 
         // Given.
 
-        let expectedRecipes: [RecipeInfo] = .random()
+        let expectedRecipes: [Recipe] = .random()
 
         recipeAPIService.recipesToReturn = expectedRecipes
 

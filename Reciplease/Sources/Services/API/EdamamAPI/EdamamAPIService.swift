@@ -36,7 +36,7 @@ struct EdamamAPIService: RecipeAPIService {
 
     // MARK: - Methods.
 
-    func fetchRecipes(for food: String) async throws -> [RecipeInfo] {
+    func fetchRecipes(for food: String) async throws -> [Recipe] {
 
         guard let url = URL(string: urlString + food) else { throw EdamamAPIError.invalidURL }
 

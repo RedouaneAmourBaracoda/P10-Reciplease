@@ -10,9 +10,6 @@
     "Back" : {
 
     },
-    "Get directions" : {
-
-    },
     "Ingredients" : {
 
     },
@@ -235,6 +232,9 @@
           }
         }
       }
+    },
+    "Show favorites" : {
+
     },
     "tabs.favorites.title" : {
       "localizations" : {

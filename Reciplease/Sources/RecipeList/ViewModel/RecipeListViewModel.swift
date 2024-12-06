@@ -12,9 +12,9 @@ final class RecipeListViewModel: ObservableObject {
 
     // MARK: - State
 
-    @Published var recipes: [RecipeInfo]
+    @Published var recipes: [Recipe]
 
-    init(recipes: [RecipeInfo]) {
+    init(recipes: [Recipe]) {
         self.recipes = recipes
     }
 }

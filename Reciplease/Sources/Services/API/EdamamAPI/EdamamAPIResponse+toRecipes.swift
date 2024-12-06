@@ -8,16 +8,18 @@
 import Foundation
 
 extension EdamamAPIResponse {
-    var toRecipes: [RecipeInfo] {
+    var toRecipes: [Recipe] {
         .init(
             hits.map {
-                RecipeInfo(
+                Recipe(
                     name: $0.recipe.label,
-                    ingredients: $0.recipe.ingredients.map { $0.food },
                     servings: Int($0.recipe.yield),
                     time: Int($0.recipe.totalTime),
-                    directions: $0.recipe.ingredientLines,
-                    imageURL: $0.recipe.image
+                    imageURL: $0.recipe.image,
+                    preparation: .init(
+                        ingredients: $0.recipe.ingredients.map { $0.food },
+                        directions: $0.recipe.ingredientLines
+                    )
                 )
             }
         )

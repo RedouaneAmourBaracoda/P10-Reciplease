@@ -16,10 +16,10 @@ struct EdamamAPIResponse: Codable, Equatable {
 // swiftlint:enable identifier_name
 
 struct Hit: Codable, Equatable {
-    let recipe: Recipe
+    let recipe: RecipeInfo
 }
 
-struct Recipe: Codable, Equatable {
+struct RecipeInfo: Codable, Equatable {
     let label: String
     let image: String
     let yield: Float

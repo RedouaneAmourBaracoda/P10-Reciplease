@@ -12,7 +12,7 @@ final class SearchViewModel: ObservableObject {
 
     // MARK: - State
 
-    @Published var recipes: [RecipeInfo] = []
+    @Published var recipes: [Recipe] = []
 
     @Published var searchInProgress = false
 

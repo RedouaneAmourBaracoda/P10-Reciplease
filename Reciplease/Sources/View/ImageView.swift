@@ -107,9 +107,9 @@ struct ImageView: View {
         }
     }
 
-    init(recipe: RecipeInfo, height: CGFloat) {
+    init(recipe: Recipe, height: CGFloat) {
         self.title = recipe.name
-        self.ingredients = recipe.ingredients.joined(separator: ", ")
+        self.ingredients = recipe.preparation.ingredients.joined(separator: ", ")
         self.servings = String(recipe.servings)
         self.time = recipe.readableTime
         self.imageURL = recipe.imageURL
@@ -117,7 +117,7 @@ struct ImageView: View {
     }
 }
 
-private extension RecipeInfo {
+private extension Recipe {
     var readableTime: String {
 
         guard time > 0 else { return "-"}

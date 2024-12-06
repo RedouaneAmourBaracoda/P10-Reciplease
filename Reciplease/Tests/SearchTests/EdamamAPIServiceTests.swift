@@ -130,7 +130,7 @@ final class EdamamAPIServiceTests: XCTestCase {
                 hits: [
                     Hit(
                         recipe:
-                            Recipe(
+                            RecipeInfo(
                                 label: "Dinner Tonight: Amagansett Raw Corn, Tomato, and Snap Pea Salad Recipe",
                                 image: "",
                                 yield: 4.0,

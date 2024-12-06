@@ -10,13 +10,13 @@ import Foundation
 
 final class MockRecipeAPIService: RecipeAPIService {
 
-    var recipesToReturn: [RecipeInfo]!
+    var recipesToReturn: [Recipe]!
 
     var error: Error?
 
     var fetchRecipeCallsCounter = 0
 
-    func fetchRecipes(for food: String) async throws -> [RecipeInfo] {
+    func fetchRecipes(for food: String) async throws -> [Recipe] {
         fetchRecipeCallsCounter += 1
 
         guard let error else { return recipesToReturn }

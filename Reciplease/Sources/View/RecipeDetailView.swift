@@ -24,8 +24,12 @@ struct RecipeDetailView: View {
                         Text("Back").opacity(0)
                     }
                     ToolbarItem(placement: .topBarTrailing) {
-                        Image(systemName: "star.fill")
-                            .foregroundStyle(.white)
+                        Button {
+                            viewModel.addToFavorites()
+                        } label: {
+                            Image(systemName: "star.fill")
+                                .foregroundStyle(.white)
+                        }
                     }
                 }
                 .background {
@@ -49,7 +53,7 @@ struct RecipeDetailView: View {
         Group {
             Text("Ingredients")
                 .font(.custom(CustomFonts.body, size: 40))
-            ForEach(viewModel.recipe.directions, id: \.self) { direction in
+            ForEach(viewModel.recipe.preparation.directions, id: \.self) { direction in
                 Text("- \(direction)")
                     .font(.custom(CustomFonts.body, size: 25))
             }
