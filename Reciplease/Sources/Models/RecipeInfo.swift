@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RecipeInfo: Equatable, Hashable {
+struct RecipeInfo: Equatable, Hashable, Codable {
     let name: String
     let ingredients: [String]
     let servings: Int

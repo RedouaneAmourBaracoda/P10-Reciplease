@@ -117,6 +117,25 @@ struct ImageView: View {
     }
 }
 
+private extension RecipeInfo {
+    var readableTime: String {
+
+        guard time > 0 else { return "-"}
+
+        let totalSeconds = time * 60
+
+        let (hours, minutes) = (totalSeconds / 3600, (totalSeconds % 3600) / 60)
+
+        let hoursString = hours == 0 ? "" : "~" + String(hours) + "h"
+
+        let minutesString = minutes == 0 ? "" : String(minutes) + "m"
+
+        let output = hoursString.isEmpty ? minutesString : hoursString
+
+        return output
+    }
+}
+
 private extension Localizable {
     static let imageNotFound = NSLocalizedString(
         "recipe.image.not-found",
