@@ -16,14 +16,6 @@ struct RecipeListView: View {
     }
 
     var body: some View {
-        NavigationStack {
-            content()
-                .customNavigationBar(navigationTitle: Localizable.navigationTitle)
-                .toolbar { ToolbarItem(placement: .topBarLeading) { Text("Back").opacity(0) } }
-        }
-    }
-
-    private func content() -> some View {
         ScrollView {
             VStack(spacing: 0) {
                 ForEach(viewModel.recipes, id: \.name) { recipe in
@@ -40,7 +32,6 @@ struct RecipeListView: View {
                     .buttonStyle(.plain)
                 }
             }
-            .onAppear { viewModel.getFavoriteRecipes() }
         }
     }
 }
@@ -85,5 +76,10 @@ extension Array<Recipe> {
 }
 
 #Preview {
-    RecipeListView(viewModel: .init(recipes: .forPreview))
+    RecipeListView(
+        viewModel: .init(
+            recipes: [.raspberrySorbet, .lemonSimpleSyrup, .orangeSherbetBombe],
+            favoriteRecipes: [.lemonSimpleSyrup]
+        )
+    )
 }

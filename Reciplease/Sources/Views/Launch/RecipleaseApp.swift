@@ -21,23 +21,21 @@ struct RecipleaseApp: App {
         WindowGroup {
             TabView {
                 SearchView()
-                    .tabItem {
-                        Text(Localizable.searchTabBarItemTitle)
-                    }
+                    .tabItem { Text(Localizable.searchTabBarItemTitle) }
 
-                Text("")
-                    .tabItem {
-                        Text(Localizable.favoritesTabBarItemTitle)
-                    }
+                FavoriteRecipesListView()
+                    .tabItem { Text(Localizable.favoritesTabBarItemTitle) }
             }
-            .onAppear {
-                UITabBarItem.appearance().setTitleTextAttributes(
-                    [.font: UIFont(name: CustomFonts.body, size: 30.0)!],
-                  for: .normal)
-                UITabBar.appearance().backgroundColor = .init(CustomColors.main)
-                UITabBar.appearance().unselectedItemTintColor = .white
-            }
+            .onAppear { configureAppearance() }
         }
+    }
+
+    private func configureAppearance() {
+        UITabBarItem.appearance().setTitleTextAttributes(
+            [.font: UIFont(name: CustomFonts.body, size: 30.0)!],
+          for: .normal)
+        UITabBar.appearance().backgroundColor = .init(CustomColors.main)
+        UITabBar.appearance().unselectedItemTintColor = .white
     }
 }
 

@@ -10,7 +10,7 @@ import SwiftUI
 @MainActor
 final class SearchViewModel: ObservableObject {
 
-    // MARK: - State
+    // MARK: - Properties
 
     @Published var recipes: [Recipe] = []
 
@@ -30,18 +30,18 @@ final class SearchViewModel: ObservableObject {
 
     var errorMessage: String = ""
 
-    // MARK: - Services.
+    // MARK: - Services
 
     private let recipeAPIService: RecipeAPIService
 
-    // MARK: - Initializer.
+    // MARK: - Initialization
 
     init(recipeAPIService: RecipeAPIService = EdamamAPIService(), foodList: [String] = []) {
         self.recipeAPIService = recipeAPIService
         self.foodList = foodList
     }
 
-    // MARK: - Methods.
+    // MARK: - Methods
 
     func add() {
         guard !inputFoodText.isEmpty else { return }

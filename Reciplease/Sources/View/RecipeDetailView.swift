@@ -31,6 +31,9 @@ struct RecipeDetailView: View {
                         }
                     }
                 }
+                .alert(isPresented: $viewModel.shouldPresentAlert) {
+                    Alert(title: Text(Localizable.errorAlertTitle), message: Text(viewModel.errorMessage))
+                }
                 .background {
                     CustomColors.main.ignoresSafeArea()
                 }

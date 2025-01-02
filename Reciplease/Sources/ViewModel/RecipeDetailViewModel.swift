@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@MainActor
 final class RecipeDetailViewModel: ObservableObject {
 
     // MARK: - Properties

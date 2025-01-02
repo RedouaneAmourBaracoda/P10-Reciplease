@@ -29,7 +29,7 @@ struct SearchView: View {
             Spacer()
             searchActionView()
                 .navigationDestination(isPresented: $viewModel.showRecipes) {
-                    RecipeListView(viewModel: .init(recipes: viewModel.recipes))
+                    SearchResultRecipesListView(viewModel: .init(recipes: viewModel.recipes))
                 }
         }
         .onAppear { viewModel.resetState() }
