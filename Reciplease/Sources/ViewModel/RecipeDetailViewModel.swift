@@ -10,11 +10,11 @@ import SwiftUI
 @MainActor
 final class RecipeDetailViewModel: ObservableObject {
 
-    // MARK: - State
+    // MARK: - Properties
 
     @Published var recipe: Recipe
 
-    @Published var saveInProgress = false
+    @Published var isFavorite: Bool
 
     @Published var shouldPresentAlert = false
 
@@ -26,8 +26,9 @@ final class RecipeDetailViewModel: ObservableObject {
 
     // MARK: - Initialization
 
-    init(recipe: Recipe, repository: Repository = Repository()) {
+    init(recipe: Recipe, isFavorite: Bool = false, repository: Repository = Repository()) {
         self.recipe = recipe
+        self.isFavorite = isFavorite
         self.repository = repository
     }
 
@@ -36,20 +37,16 @@ final class RecipeDetailViewModel: ObservableObject {
     func addToFavorites() {
         do {
             try repository.add(newRecipe: recipe)
+            isFavorite = true
         } catch {
             present(error: error)
         }
     }
 
-    func retrieveFavorites() {
+    func removeFromFavorites() {
         do {
-            let recipes = try repository.fetch()
-            print("Favorites recipes :")
-            print("")
-            recipes.forEach {
-                print($0.name)
-                print("")
-            }
+            try repository.remove(recipe: recipe)
+            isFavorite = false
         } catch {
             present(error: error)
         }

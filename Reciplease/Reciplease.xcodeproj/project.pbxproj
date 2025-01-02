@@ -177,13 +177,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		B858B1C62D032742001B4A10 /* Persitence */ = {
+		B858B1C62D032742001B4A10 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				B858B1D52D032D4B001B4A10 /* Repository */,
 				B858B1D42D032C42001B4A10 /* CoreData */,
+				B858B1D52D032D4B001B4A10 /* Repository */,
 			);
-			path = Persitence;
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		B858B1D42D032C42001B4A10 /* CoreData */ = {
@@ -257,7 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				B8D33C7B2CF3AE88007C5A28 /* API */,
-				B858B1C62D032742001B4A10 /* Persitence */,
+				B858B1C62D032742001B4A10 /* Persistence */,
 			);
 			path = Services;
 			sourceTree = "<group>";

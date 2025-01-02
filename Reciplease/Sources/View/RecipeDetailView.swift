@@ -25,10 +25,9 @@ struct RecipeDetailView: View {
                     }
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
-                            viewModel.addToFavorites()
+                            viewModel.isFavorite ? viewModel.removeFromFavorites() : viewModel.addToFavorites()
                         } label: {
-                            Image(systemName: "star.fill")
-                                .foregroundStyle(.white)
+                            viewModel.isFavorite ? Image(systemName: "star.fill") : Image(systemName: "star")
                         }
                     }
                 }

@@ -19,11 +19,7 @@ struct RecipeListView: View {
         NavigationStack {
             content()
                 .customNavigationBar(navigationTitle: Localizable.navigationTitle)
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Text("Back").opacity(0)
-                    }
-                }
+                .toolbar { ToolbarItem(placement: .topBarLeading) { Text("Back").opacity(0) } }
         }
     }
 
@@ -32,13 +28,19 @@ struct RecipeListView: View {
             VStack(spacing: 0) {
                 ForEach(viewModel.recipes, id: \.name) { recipe in
                     NavigationLink {
-                        RecipeDetailView(viewModel: .init(recipe: recipe))
+                        RecipeDetailView(
+                            viewModel: .init(
+                                recipe: recipe,
+                                isFavorite: viewModel.isFavorite(recipe: recipe)
+                            )
+                        )
                     } label: {
                         ImageView(recipe: recipe, height: 200)
                     }
                     .buttonStyle(.plain)
                 }
             }
+            .onAppear { viewModel.getFavoriteRecipes() }
         }
     }
 }
