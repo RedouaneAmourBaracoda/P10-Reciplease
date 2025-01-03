@@ -203,13 +203,13 @@
 			path = EdamamAPI;
 			sourceTree = "<group>";
 		};
-		B8D33C712CF2C9A3007C5A28 /* SearchTab */ = {
+		B8D33C712CF2C9A3007C5A28 /* Search */ = {
 			isa = PBXGroup;
 			children = (
 				B8F72D0D2D26F7C300453D6C /* Input */,
 				B8F72D0E2D26F7D600453D6C /* Results */,
 			);
-			path = SearchTab;
+			path = Search;
 			sourceTree = "<group>";
 		};
 		B8D33C722CF2C9B4007C5A28 /* ViewModel */ = {
@@ -321,7 +321,7 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		B8F72D012D26AF1000453D6C /* FavoritesTab */ = {
+		B8F72D012D26AF1000453D6C /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
 				B8F72D022D26AF5400453D6C /* FavoriteRecipesListView.swift */,
@@ -329,7 +329,7 @@
 				B8B7B54D2D27E18800BA03EC /* RecipeDetail */,
 				B858B19C2CFF95C4001B4A10 /* RecipeList */,
 			);
-			path = FavoritesTab;
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		B8F72D052D26B06600453D6C /* Launch */ = {
@@ -370,8 +370,8 @@
 		B8F72D0F2D26F88E00453D6C /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				B8F72D012D26AF1000453D6C /* FavoritesTab */,
-				B8D33C712CF2C9A3007C5A28 /* SearchTab */,
+				B8F72D012D26AF1000453D6C /* Favorites */,
+				B8D33C712CF2C9A3007C5A28 /* Search */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
