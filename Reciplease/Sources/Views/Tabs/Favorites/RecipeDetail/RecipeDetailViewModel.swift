@@ -61,4 +61,19 @@ final class RecipeDetailViewModel: ObservableObject {
         }
         shouldPresentAlert = true
     }
+
+    func refreshFavoriteState() {
+        do {
+            let favoriteRecipes = try repository.fetch()
+            isFavorite = favoriteRecipes.contains(recipe)
+        } catch {
+            if let recipeAPIError = error as? (any RecipeAPIError) {
+                NSLog(recipeAPIError.errorDescription ?? Localizable.undeterminedErrorDescription)
+                errorMessage = recipeAPIError.userFriendlyDescription
+            } else {
+                errorMessage = Localizable.undeterminedErrorDescription
+            }
+            shouldPresentAlert = true
+        }
+    }
 }
