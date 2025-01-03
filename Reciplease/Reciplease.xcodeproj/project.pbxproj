@@ -326,17 +326,10 @@
 			children = (
 				B8F72D022D26AF5400453D6C /* FavoriteRecipesListView.swift */,
 				B8F72D062D26B14400453D6C /* FavoriteRecipesListViewModel.swift */,
-			);
-			path = FavoritesTab;
-			sourceTree = "<group>";
-		};
-		B8F72D042D26AFA600453D6C /* CommonViews */ = {
-			isa = PBXGroup;
-			children = (
 				B8B7B54D2D27E18800BA03EC /* RecipeDetail */,
 				B858B19C2CFF95C4001B4A10 /* RecipeList */,
 			);
-			path = CommonViews;
+			path = FavoritesTab;
 			sourceTree = "<group>";
 		};
 		B8F72D052D26B06600453D6C /* Launch */ = {
@@ -377,7 +370,6 @@
 		B8F72D0F2D26F88E00453D6C /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				B8F72D042D26AFA600453D6C /* CommonViews */,
 				B8F72D012D26AF1000453D6C /* FavoritesTab */,
 				B8D33C712CF2C9A3007C5A28 /* SearchTab */,
 			);
