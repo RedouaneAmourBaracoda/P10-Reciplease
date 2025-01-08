@@ -16,17 +16,13 @@ struct SearchResultRecipesListView: View {
 
     var body: some View {
         NavigationStack {
-            RecipeListView(viewModel: .init(recipes: viewModel.recipes, favoriteRecipes: viewModel.favoriteRecipes))
+            RecipeListView(viewModel: .init(recipes: viewModel.recipes))
                 .customNavigationBar(navigationTitle: Localizable.navigationTitle)
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
                         Text("Back").opacity(0)
                     }
                 }
-                .alert(isPresented: $viewModel.shouldPresentAlert) {
-                    Alert(title: Text(Localizable.errorAlertTitle), message: Text(viewModel.errorMessage))
-                }
-                .onAppear { viewModel.refreshFavoriteRecipes() }
         }
     }
 }

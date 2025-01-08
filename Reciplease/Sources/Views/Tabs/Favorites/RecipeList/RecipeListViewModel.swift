@@ -13,18 +13,9 @@ final class RecipeListViewModel: ObservableObject {
 
     let recipes: [Recipe]
 
-    let favoriteRecipes: [Recipe]
-
     // MARK: - Initialization
 
-    init(recipes: [Recipe] = [], favoriteRecipes: [Recipe] = []) {
+    init(recipes: [Recipe] = []) {
         self.recipes = recipes
-        self.favoriteRecipes = favoriteRecipes
-    }
-
-    // MARK: - Methods
-
-    func isFavorite(recipe: Recipe) -> Bool {
-        favoriteRecipes.contains { $0.name == recipe.name }
     }
 }

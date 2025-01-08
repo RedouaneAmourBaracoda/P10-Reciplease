@@ -20,10 +20,8 @@ struct RecipeListView: View {
             VStack(spacing: 0) {
                 ForEach(viewModel.recipes, id: \.name) { recipe in
                     NavigationLink {
-                        RecipeDetailView(
-                            viewModel: .init(
-                                recipe: recipe,
-                                isFavorite: viewModel.isFavorite(recipe: recipe)
+                        RecipeDetailView(viewModel: .init(
+                                recipe: recipe
                             )
                         )
                     } label: {
@@ -78,8 +76,7 @@ extension Array<Recipe> {
 #Preview {
     RecipeListView(
         viewModel: .init(
-            recipes: [.raspberrySorbet, .lemonSimpleSyrup, .orangeSherbetBombe],
-            favoriteRecipes: [.lemonSimpleSyrup]
+            recipes: [.raspberrySorbet, .lemonSimpleSyrup, .orangeSherbetBombe]
         )
     )
 }

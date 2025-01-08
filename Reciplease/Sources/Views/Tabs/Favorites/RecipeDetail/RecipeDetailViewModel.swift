@@ -51,17 +51,6 @@ final class RecipeDetailViewModel: ObservableObject {
         }
     }
 
-    private func present(error: Error) {
-        if let repositoryError = error as? RepositoryError {
-            NSLog(repositoryError.errorDescription ?? Localizable.undeterminedErrorDescription)
-            errorMessage = repositoryError.userFriendlyDescription
-        } else {
-            NSLog(error.localizedDescription)
-            errorMessage = Localizable.undeterminedErrorDescription
-        }
-        shouldPresentAlert = true
-    }
-
     func refreshFavoriteState() {
         do {
             let favoriteRecipes = try repository.fetch()
@@ -75,5 +64,16 @@ final class RecipeDetailViewModel: ObservableObject {
             }
             shouldPresentAlert = true
         }
+    }
+
+    private func present(error: Error) {
+        if let repositoryError = error as? RepositoryError {
+            NSLog(repositoryError.errorDescription ?? Localizable.undeterminedErrorDescription)
+            errorMessage = repositoryError.userFriendlyDescription
+        } else {
+            NSLog(error.localizedDescription)
+            errorMessage = Localizable.undeterminedErrorDescription
+        }
+        shouldPresentAlert = true
     }
 }

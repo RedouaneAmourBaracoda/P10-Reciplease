@@ -13,36 +13,9 @@ final class SearchResultRecipesListViewModel: ObservableObject {
 
     let recipes: [Recipe]
 
-    @Published var favoriteRecipes: [Recipe] = []
-
-    @Published var shouldPresentAlert = false
-
-    var errorMessage: String = ""
-
-    // MARK: - Services
-
-    private let repository: Repository
-
     // MARK: - Initialization
 
-    init(recipes: [Recipe], repository: Repository = Repository()) {
+    init(recipes: [Recipe]) {
         self.recipes = recipes
-        self.repository = repository
-    }
-
-    // MARK: - Methods
-
-    func refreshFavoriteRecipes() {
-        do {
-            favoriteRecipes = try repository.fetch()
-        } catch {
-            if let recipeAPIError = error as? (any RecipeAPIError) {
-                NSLog(recipeAPIError.errorDescription ?? Localizable.undeterminedErrorDescription)
-                errorMessage = recipeAPIError.userFriendlyDescription
-            } else {
-                errorMessage = Localizable.undeterminedErrorDescription
-            }
-            shouldPresentAlert = true
-        }
     }
 }

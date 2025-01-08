@@ -15,6 +15,8 @@ import SwiftUI
 // Ajouter la politque de cache avec KingFisher
 // Ajouter des accessibilité label pour voicover
 
+// Modifier l'apparance des recettes (distorsions des images avec clip shape + ecriture avec background).
+
 @main
 struct RecipleaseApp: App {
     var body: some Scene {
