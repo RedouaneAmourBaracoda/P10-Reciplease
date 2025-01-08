@@ -21,7 +21,7 @@ struct RecipeDetailView: View {
                 .customNavigationBar(navigationTitle: Localizable.navigationTitle)
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
-                        Text("Back").opacity(0)
+                        Text(Localizable.backButtonTitle).opacity(0)
                     }
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
@@ -52,7 +52,7 @@ struct RecipeDetailView: View {
 
     private func ingredients() -> some View {
         Group {
-            Text("Ingredients")
+            Text(Localizable.ingredientsListTitle)
                 .font(.custom(CustomFonts.body, size: 40))
             ForEach(viewModel.recipe.preparation.directions, id: \.self) { direction in
                 Text("- \(direction)")
@@ -69,7 +69,7 @@ struct RecipeDetailView: View {
             Button {
 
             } label: {
-                Text("Get directions")
+                Text(Localizable.getDirectionsButtonTitle)
                     .font(.title)
                     .foregroundStyle(.white)
                     .padding(.vertical)
@@ -82,6 +82,18 @@ struct RecipeDetailView: View {
         }
         .padding(.vertical)
     }
+}
+
+private extension Localizable {
+    static let getDirectionsButtonTitle = NSLocalizedString(
+        "recipe-detail.directions-button.title",
+        comment: ""
+    )
+
+    static let ingredientsListTitle = NSLocalizedString(
+        "recipe-detail.ingredients-list.title",
+        comment: ""
+    )
 }
 
 #Preview {

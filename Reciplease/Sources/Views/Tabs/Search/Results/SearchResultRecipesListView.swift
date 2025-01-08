@@ -20,7 +20,7 @@ struct SearchResultRecipesListView: View {
                 .customNavigationBar(navigationTitle: Localizable.navigationTitle)
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
-                        Text("Back").opacity(0)
+                        Text(Localizable.backButtonTitle).opacity(0)
                     }
                 }
         }

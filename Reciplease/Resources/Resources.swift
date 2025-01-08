@@ -26,4 +26,9 @@ enum Localizable {
         "recipe.search-button.title",
         comment: ""
     )
+
+    static let backButtonTitle = NSLocalizedString(
+        "recipe-detail.back-button.title",
+        comment: ""
+    )
 }

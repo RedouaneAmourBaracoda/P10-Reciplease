@@ -4,14 +4,35 @@
     "- %@" : {
 
     },
-    "Back" : {
-
+    "recipe-detail.back-button.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back"
+          }
+        }
+      }
     },
-    "Get directions" : {
-
+    "recipe-detail.directions-button.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get directions"
+          }
+        }
+      }
     },
-    "Ingredients" : {
-
+    "recipe-detail.ingredients-list.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingredients"
+          }
+        }
+      }
     },
     "recipe.edamam-api.errors.bad-request.description" : {
       "localizations" : {
