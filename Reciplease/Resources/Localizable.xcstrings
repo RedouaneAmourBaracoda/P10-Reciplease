@@ -2,7 +2,26 @@
   "sourceLanguage" : "en",
   "strings" : {
     "- %@" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@"
+          }
+        }
+      }
     },
     "recipe-detail.back-button.title" : {
       "localizations" : {
@@ -10,6 +29,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Back"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atrás"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retour"
           }
         }
       }
@@ -21,6 +52,18 @@
             "state" : "translated",
             "value" : "Get directions"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obtener direcciones"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir consignes"
+          }
         }
       }
     },
@@ -30,6 +73,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ingredients"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingredientes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingrédients"
           }
         }
       }
@@ -41,6 +96,18 @@
             "state" : "translated",
             "value" : "Missing parameters in the request or some have incorrect format or values out of allowed range."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parámetros que faltan en la solicitud o algunos tienen formato incorrecto o valores fuera del rango permitido."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Des paramètres sont manquants dans la requête ou certains ont un format incorrect ou des valeurs hors de la plage autorisée."
+          }
         }
       }
     },
@@ -50,6 +117,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "The food provided does not exist in data base or has invalid format."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El alimento suministrado no existe en la base de datos o tiene un formato inválido."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La nourriture fournie n’existe pas dans la base de données ou a un format invalide."
           }
         }
       }
@@ -61,6 +140,18 @@
             "state" : "translated",
             "value" : "Unexpected Error due to internal issues."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error inesperado debido a problemas internos."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur inattendue due à des problèmes internes."
+          }
         }
       }
     },
@@ -70,6 +161,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "We couldn't find any matches for this food. Double check your search for any typos or spelling errors - or try a different search term."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No pudimos encontrar ninguna coincidencia para este alimento. Compruebe su búsqueda de errores tipográficos o errores ortográficos - o intente un término de búsqueda diferente."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nous n’avons pas trouvé de correspondance pour ce produit. Vérifiez votre recherche pour d'éventuelles erreurs d’orthographe - ou essayez un autre terme de recherche."
           }
         }
       }
@@ -81,6 +184,18 @@
             "state" : "translated",
             "value" : "Invalid request"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solicitud inválida"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Requête invalide"
+          }
         }
       }
     },
@@ -89,7 +204,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "There was an issue with weather services. Access might be restricted or services are simply down."
+            "value" : "There was an issue with food services. Access might be restricted or services are simply down."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hubo un problema con los servicios de alimentación. El acceso podría estar restringido o los servicios simplemente están fuera."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un problème est survenu avec la recherche. L’accès peut être restreint ou les services sont simplement en panne."
           }
         }
       }
@@ -101,6 +228,18 @@
             "state" : "translated",
             "value" : "Invalid URL"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL inválida"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL invalide"
+          }
         }
       }
     },
@@ -110,6 +249,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Data with requested parameters (food etc) does not exist in service database"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los datos con parámetros solicitados (alimentos, etc.) no existen en la base de datos del servicio"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les données avec les paramètres demandés (aliments, etc.) n’existent pas dans la base de données."
           }
         }
       }
@@ -121,6 +272,18 @@
             "state" : "translated",
             "value" : "Quota of requests was exceeded. Retry request later or after extending your key quota."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se ha excedido la cuota de solicitudes. Vuelva a intentar la solicitud más tarde o después de ampliar su cuota clave."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La limite de demandes a été dépassé. Essayez de nouveau plus tard ou après avoir étendu votre quota de clés."
+          }
         }
       }
     },
@@ -130,6 +293,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "The limit of requests to recipes services has been exceeded."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se ha superado el límite de solicitudes de servicios de recetas."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La limite de recettes a été dépassée."
           }
         }
       }
@@ -141,6 +316,18 @@
             "state" : "translated",
             "value" : "API token not providen in the request or if provided does not grant access to this API."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El token de API no se proporciona en la solicitud o si se proporciona no concede acceso a esta API."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Token API non fourni dans la requête ou alors ne donne pas accès à cette API."
+          }
         }
       }
     },
@@ -150,6 +337,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "A non-determined error with food services occurred."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se produjo un error no determinado con los servicios de alimentación."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une erreur indéterminée s’est produite avec les services de recherche."
           }
         }
       }
@@ -161,6 +360,18 @@
             "state" : "translated",
             "value" : "No image available"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay imagen disponible"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune image disponible"
+          }
         }
       }
     },
@@ -170,6 +381,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Search"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher"
           }
         }
       }
@@ -181,6 +404,18 @@
             "state" : "translated",
             "value" : "Error"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur"
+          }
         }
       }
     },
@@ -190,6 +425,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Search for recipes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar recetas"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher les recettes"
           }
         }
       }
@@ -201,6 +448,18 @@
             "state" : "translated",
             "value" : "Clear"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effacer"
+          }
         }
       }
     },
@@ -209,7 +468,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Yours ingredients :"
+            "value" : "Your ingredients :"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sus ingredientes :"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vos ingrédients :"
           }
         }
       }
@@ -221,6 +492,18 @@
             "state" : "translated",
             "value" : "Add"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutter"
+          }
         }
       }
     },
@@ -230,6 +513,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lemon Cheese Sausages..."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limón Queso Salchichas"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Citron Fromage Saucisse..."
           }
         }
       }
@@ -241,12 +536,36 @@
             "state" : "translated",
             "value" : "What's in your fridge ?"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " ¿Qué hay en su refrigerador?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que contient votre réfrigérateur ?"
+          }
         }
       }
     },
     "search.navigation.title" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reciplease"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reciplease"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reciplease"
@@ -261,6 +580,18 @@
             "state" : "translated",
             "value" : "Favorites"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favoritos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favoris"
+          }
         }
       }
     },
@@ -270,6 +601,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Search"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recherche"
           }
         }
       }
