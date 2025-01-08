@@ -10,12 +10,9 @@ import SwiftUI
 // MARK: - TODO:
 
 // Unit tests CoreDataStack et le Repository
-// Rajouter dans la .gitignore le DSSTORE
 // Terminer l'internationalisation
 // Ajouter la politque de cache avec KingFisher
 // Ajouter des accessibilité label pour voicover
-
-// Modifier l'apparance des recettes (distorsions des images avec clip shape + ecriture avec background).
 
 @main
 struct RecipleaseApp: App {
