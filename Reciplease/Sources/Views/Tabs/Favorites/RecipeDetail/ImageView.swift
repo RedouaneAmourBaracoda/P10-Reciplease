@@ -31,16 +31,15 @@ struct ImageView: View {
     }
 
     var body: some View {
-        RoundedRectangle(cornerRadius: 1.0)
-            .stroke()
-            .frame(height: imageHeight)
-            .overlay {
-                overlayContent()
-            }
-            .background { asyncImage() }
+        ZStack {
+            asyncImage()
+            contentInfo()
+        }
+        .frame(height: imageHeight)
+        .clipShape(.rect(cornerRadius: 1.0))
     }
 
-    private func overlayContent() -> some View {
+    private func contentInfo() -> some View {
         VStack {
             HStack {
                 Spacer()
@@ -51,6 +50,7 @@ struct ImageView: View {
                 titleInfo()
                 Spacer()
             }
+            .background(.black.opacity(1/3))
         }
         .safeAreaPadding()
     }
@@ -81,9 +81,11 @@ struct ImageView: View {
             Text(title)
                 .font(.title)
                 .fontWeight(.medium)
+                .foregroundStyle(.white)
             Text(ingredients)
                 .font(.title3)
                 .fontWeight(.light)
+                .foregroundStyle(.white.secondary)
         }
     }
 
@@ -97,7 +99,10 @@ struct ImageView: View {
     private func imageLoadingResult(phase: AsyncImagePhase) -> some View {
         switch phase {
         case let .success(image):
-            image.resizable()
+            image
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxHeight: imageHeight)
         case let .failure(error):
             Text(Localizable.imageNotFound + " : " + error.localizedDescription)
         case .empty:
