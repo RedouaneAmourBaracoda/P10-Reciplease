@@ -19,21 +19,20 @@ final class FavoriteRecipesListViewModel: ObservableObject {
 
     // MARK: - Services
 
-    private let coreDataStack: CoreDataStack
+    private let coreDataService: CoreDataService
 
     // MARK: - Initialization
 
-    init(coreDataStack: CoreDataStack = .shared) {
-        self.coreDataStack = coreDataStack
+    init(coreDataService: CoreDataService = CoreDataStack.shared) {
+        self.coreDataService = coreDataService
     }
 
     // MARK: - Methods
 
     func refreshRecipes() {
         do {
-            favoriteRecipes = try coreDataStack.fetch()
+            favoriteRecipes = try coreDataService.fetch()
         } catch {
-            NSLog(error.localizedDescription)
             errorMessage = Localizable.undeterminedErrorDescription
             shouldPresentAlert = true
         }

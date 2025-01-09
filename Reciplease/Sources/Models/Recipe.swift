@@ -7,15 +7,21 @@
 
 import Foundation
 
-struct Recipe: Equatable, Hashable, Codable {
+struct Recipe: Codable {
     let name: String
     let servings: Int
     let time: Int
     let imageURL: String
     let preparation: Preparation
 
-    struct Preparation: Equatable, Hashable, Codable {
+    struct Preparation: Codable {
         let ingredients: [String]
         let directions: [String]
+    }
+}
+
+extension Recipe: Equatable {
+    static func == (lhs: Recipe, rhs: Recipe) -> Bool {
+        lhs.name == rhs.name
     }
 }

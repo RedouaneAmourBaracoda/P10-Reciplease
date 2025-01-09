@@ -23,9 +23,10 @@ final class CoreDataStackMock: CoreDataService {
     func add(newRecipe: Recipe) throws {
         addRecipeCallsCounter += 1
 
-        recipes.append(newRecipe)
-
-        guard let error else { return }
+        guard let error else {
+            recipes.append(newRecipe)
+            return
+        }
 
         throw error
     }
@@ -33,9 +34,10 @@ final class CoreDataStackMock: CoreDataService {
     func remove(recipe: Recipe) throws {
         removeRecipeCallsCounter += 1
 
-        recipes.removeAll { $0 == recipe }
-
-        guard let error else { return }
+        guard let error else {
+            recipes.removeAll { $0 == recipe }
+            return
+        }
 
         throw error
     }

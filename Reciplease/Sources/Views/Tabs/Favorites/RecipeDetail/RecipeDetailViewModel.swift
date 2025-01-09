@@ -13,7 +13,7 @@ final class RecipeDetailViewModel: ObservableObject {
 
     @Published var recipe: Recipe
 
-    @Published var isFavorite: Bool
+    @Published var isFavorite: Bool = false
 
     @Published var shouldPresentAlert = false
 
@@ -21,21 +21,20 @@ final class RecipeDetailViewModel: ObservableObject {
 
     // MARK: - Services
 
-    private let coreDataStack: CoreDataService
+    private let coreDataService: CoreDataService
 
     // MARK: - Initialization
 
-    init(recipe: Recipe, isFavorite: Bool = false, coreDataStack: CoreDataService = CoreDataStack.shared) {
+    init(recipe: Recipe, coreDataService: CoreDataService = CoreDataStack.shared) {
         self.recipe = recipe
-        self.isFavorite = isFavorite
-        self.coreDataStack = coreDataStack
+        self.coreDataService = coreDataService
     }
 
     // MARK: - Methods
 
     func addToFavorites() {
         do {
-            try coreDataStack.add(newRecipe: recipe)
+            try coreDataService.add(newRecipe: recipe)
             isFavorite = true
         } catch {
             present(error: error)
@@ -44,7 +43,7 @@ final class RecipeDetailViewModel: ObservableObject {
 
     func removeFromFavorites() {
         do {
-            try coreDataStack.remove(recipe: recipe)
+            try coreDataService.remove(recipe: recipe)
             isFavorite = false
         } catch {
             present(error: error)
@@ -53,7 +52,7 @@ final class RecipeDetailViewModel: ObservableObject {
 
     func refreshFavoriteState() {
         do {
-            let favoriteRecipes = try coreDataStack.fetch()
+            let favoriteRecipes = try coreDataService.fetch()
             isFavorite = favoriteRecipes.contains(recipe)
         } catch {
             present(error: error)
@@ -61,7 +60,6 @@ final class RecipeDetailViewModel: ObservableObject {
     }
 
     private func present(error: Error) {
-        NSLog(error.localizedDescription)
         errorMessage = Localizable.undeterminedErrorDescription
         shouldPresentAlert = true
     }
