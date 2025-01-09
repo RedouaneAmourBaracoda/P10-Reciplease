@@ -21,6 +21,7 @@
 		B8B7B5512D27E1DA00BA03EC /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B7B5502D27E1DA00BA03EC /* RecipeDetailView.swift */; };
 		B8B7B5532D27E1F700BA03EC /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B7B5522D27E1F700BA03EC /* ImageView.swift */; };
 		B8B7B5562D2F281600BA03EC /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B7B5552D2F281600BA03EC /* CoreDataStackTests.swift */; };
+		B8B7B55E2D2F6B5D00BA03EC /* CoreDataStackMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B7B55D2D2F6B5D00BA03EC /* CoreDataStackMock.swift */; };
 		B8D33C6D2CF2C75C007C5A28 /* EdamamAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D33C6C2CF2C75C007C5A28 /* EdamamAPIService.swift */; };
 		B8D33C702CF2C8E6007C5A28 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D33C6F2CF2C8E6007C5A28 /* SearchViewModel.swift */; };
 		B8D33C742CF2C9C8007C5A28 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D33C732CF2C9C8007C5A28 /* SearchView.swift */; };
@@ -70,6 +71,7 @@
 		B8B7B5502D27E1DA00BA03EC /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		B8B7B5522D27E1F700BA03EC /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		B8B7B5552D2F281600BA03EC /* CoreDataStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackTests.swift; sourceTree = "<group>"; };
+		B8B7B55D2D2F6B5D00BA03EC /* CoreDataStackMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackMock.swift; sourceTree = "<group>"; };
 		B8D33C6C2CF2C75C007C5A28 /* EdamamAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamAPIService.swift; sourceTree = "<group>"; };
 		B8D33C6F2CF2C8E6007C5A28 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		B8D33C732CF2C9C8007C5A28 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				B8B7B5552D2F281600BA03EC /* CoreDataStackTests.swift */,
+				B8B7B55D2D2F6B5D00BA03EC /* CoreDataStackMock.swift */,
 			);
 			path = PersistenceTests;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8B7B55E2D2F6B5D00BA03EC /* CoreDataStackMock.swift in Sources */,
 				B858B1932CFF8725001B4A10 /* MockRecipeAPIService.swift in Sources */,
 				B858B1902CFF8594001B4A10 /* SearchViewModelTests.swift in Sources */,
 				B8DD82162CF298CA00BCFC22 /* EdamamAPIServiceTests.swift in Sources */,

@@ -21,11 +21,11 @@ final class RecipeDetailViewModel: ObservableObject {
 
     // MARK: - Services
 
-    private let coreDataStack: CoreDataStack
+    private let coreDataStack: CoreDataService
 
     // MARK: - Initialization
 
-    init(recipe: Recipe, isFavorite: Bool = false, coreDataStack: CoreDataStack = .shared) {
+    init(recipe: Recipe, isFavorite: Bool = false, coreDataStack: CoreDataService = CoreDataStack.shared) {
         self.recipe = recipe
         self.isFavorite = isFavorite
         self.coreDataStack = coreDataStack

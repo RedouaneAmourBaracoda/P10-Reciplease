@@ -8,7 +8,15 @@
 import CoreData
 import Foundation
 
-final class CoreDataStack {
+protocol CoreDataService {
+    func add(newRecipe: Recipe) throws
+
+    func remove(recipe: Recipe) throws
+
+    func fetch() throws -> [Recipe]
+}
+
+final class CoreDataStack: CoreDataService {
     var persistentContainer: NSPersistentContainer
 
     var context: NSManagedObjectContext { persistentContainer.viewContext }
