@@ -20,14 +20,14 @@ struct RecipeListView: View {
             VStack(spacing: 0) {
                 ForEach(viewModel.recipes, id: \.name) { recipe in
                     NavigationLink {
-                        RecipeDetailView(viewModel: .init(
-                                recipe: recipe
-                            )
-                        )
+                        RecipeDetailView(viewModel: .init(recipe: recipe))
                     } label: {
                         ImageView(recipe: recipe, height: 200)
                     }
-                    .buttonStyle(.plain)
+                    Rectangle()
+                        .fill(.black)
+                        .frame(height: 3.0)
+                        .edgesIgnoringSafeArea(.horizontal)
                 }
             }
         }
