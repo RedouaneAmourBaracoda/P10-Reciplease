@@ -19,26 +19,22 @@ final class FavoriteRecipesListViewModel: ObservableObject {
 
     // MARK: - Services
 
-    private let repository: Repository
+    private let coreDataStack: CoreDataStack
 
     // MARK: - Initialization
 
-    init(repository: Repository = Repository()) {
-        self.repository = repository
+    init(coreDataStack: CoreDataStack = .shared) {
+        self.coreDataStack = coreDataStack
     }
 
     // MARK: - Methods
 
     func refreshRecipes() {
         do {
-            favoriteRecipes = try repository.fetch()
+            favoriteRecipes = try coreDataStack.fetch()
         } catch {
-            if let recipeAPIError = error as? (any RecipeAPIError) {
-                NSLog(recipeAPIError.errorDescription ?? Localizable.undeterminedErrorDescription)
-                errorMessage = recipeAPIError.userFriendlyDescription
-            } else {
-                errorMessage = Localizable.undeterminedErrorDescription
-            }
+            NSLog(error.localizedDescription)
+            errorMessage = Localizable.undeterminedErrorDescription
             shouldPresentAlert = true
         }
     }

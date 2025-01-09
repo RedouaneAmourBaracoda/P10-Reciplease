@@ -21,21 +21,21 @@ final class RecipeDetailViewModel: ObservableObject {
 
     // MARK: - Services
 
-    private let repository: Repository
+    private let coreDataStack: CoreDataStack
 
     // MARK: - Initialization
 
-    init(recipe: Recipe, isFavorite: Bool = false, repository: Repository = Repository()) {
+    init(recipe: Recipe, isFavorite: Bool = false, coreDataStack: CoreDataStack = .shared) {
         self.recipe = recipe
         self.isFavorite = isFavorite
-        self.repository = repository
+        self.coreDataStack = coreDataStack
     }
 
     // MARK: - Methods
 
     func addToFavorites() {
         do {
-            try repository.add(newRecipe: recipe)
+            try coreDataStack.add(newRecipe: recipe)
             isFavorite = true
         } catch {
             present(error: error)
@@ -44,7 +44,7 @@ final class RecipeDetailViewModel: ObservableObject {
 
     func removeFromFavorites() {
         do {
-            try repository.remove(recipe: recipe)
+            try coreDataStack.remove(recipe: recipe)
             isFavorite = false
         } catch {
             present(error: error)
@@ -53,27 +53,16 @@ final class RecipeDetailViewModel: ObservableObject {
 
     func refreshFavoriteState() {
         do {
-            let favoriteRecipes = try repository.fetch()
+            let favoriteRecipes = try coreDataStack.fetch()
             isFavorite = favoriteRecipes.contains(recipe)
         } catch {
-            if let recipeAPIError = error as? (any RecipeAPIError) {
-                NSLog(recipeAPIError.errorDescription ?? Localizable.undeterminedErrorDescription)
-                errorMessage = recipeAPIError.userFriendlyDescription
-            } else {
-                errorMessage = Localizable.undeterminedErrorDescription
-            }
-            shouldPresentAlert = true
+            present(error: error)
         }
     }
 
     private func present(error: Error) {
-        if let repositoryError = error as? RepositoryError {
-            NSLog(repositoryError.errorDescription ?? Localizable.undeterminedErrorDescription)
-            errorMessage = repositoryError.userFriendlyDescription
-        } else {
-            NSLog(error.localizedDescription)
-            errorMessage = Localizable.undeterminedErrorDescription
-        }
+        NSLog(error.localizedDescription)
+        errorMessage = Localizable.undeterminedErrorDescription
         shouldPresentAlert = true
     }
 }

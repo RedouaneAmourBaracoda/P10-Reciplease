@@ -31,56 +31,50 @@ final class CoreDataStackTests: XCTestCase {
         coreDataStack = CoreDataStack(persistentContainer: container)
     }
 
-    func testFetchRecipes() throws {
+    func testSaveRecipes() throws {
         // Given.
 
-        let recipe1 = FavoriteRecipe(context: coreDataStack.context)
-
-        let recipe2 = FavoriteRecipe(context: coreDataStack.context)
-
-        let recipe3 = FavoriteRecipe(context: coreDataStack.context)
+        let recipe: Recipe = .random()
 
         // When.
 
-        try coreDataStack.context.save()
+        try coreDataStack.add(newRecipe: recipe)
 
         // Then.
 
-        let request: NSFetchRequest<FavoriteRecipe> = FavoriteRecipe.fetchRequest()
+        let recipes = try coreDataStack.fetch()
 
-        let recipes = try coreDataStack.context.fetch(request)
+        XCTAssertEqual(1, recipes.count)
 
-        XCTAssertEqual(3, recipes.count)
-
-        XCTAssertTrue(recipes.contains(recipe1))
-
-        XCTAssertTrue(recipes.contains(recipe2))
-
-        XCTAssertTrue(recipes.contains(recipe3))
+        XCTAssertTrue(recipes.contains(recipe))
     }
 
     func testRemoveRecipes() throws {
         // Given.
 
-        let recipe1 = FavoriteRecipe(context: coreDataStack.context)
+        let recipe1: Recipe = .random()
 
-        let recipe2 = FavoriteRecipe(context: coreDataStack.context)
-
-        let recipe3 = FavoriteRecipe(context: coreDataStack.context)
+        let recipe2: Recipe = .random()
 
         // When.
 
-        try coreDataStack.context.save()
+        try coreDataStack.add(newRecipe: recipe1)
 
-        let request: NSFetchRequest<FavoriteRecipe> = FavoriteRecipe.fetchRequest()
+        try coreDataStack.add(newRecipe: recipe2)
 
-        let recipes = try coreDataStack.context.fetch(request)
+        let recipes = try coreDataStack.fetch()
 
-        recipes.forEach { coreDataStack.context.delete($0) }
+        XCTAssertEqual(2, recipes.count)
 
-        try coreDataStack.context.save()
+        XCTAssertTrue(recipes.contains(recipe1))
 
-        let finalRecipes = try coreDataStack.context.fetch(request)
+        XCTAssertTrue(recipes.contains(recipe2))
+
+        try coreDataStack.remove(recipe: recipe1)
+
+        try coreDataStack.remove(recipe: recipe2)
+
+        let finalRecipes = try coreDataStack.fetch()
 
         // Then.
 
@@ -89,7 +83,5 @@ final class CoreDataStackTests: XCTestCase {
         XCTAssertFalse(finalRecipes.contains(recipe1))
 
         XCTAssertFalse(finalRecipes.contains(recipe2))
-
-        XCTAssertFalse(finalRecipes.contains(recipe3))
     }
 }

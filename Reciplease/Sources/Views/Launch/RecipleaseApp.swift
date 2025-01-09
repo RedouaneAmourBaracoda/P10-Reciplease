@@ -9,7 +9,6 @@ import SwiftUI
 
 // MARK: - TODO:
 
-// Unit tests CoreDataStack et le Repository
 // Ajouter la politque de cache avec KingFisher
 // Ajouter des accessibilité label pour voicover
 
