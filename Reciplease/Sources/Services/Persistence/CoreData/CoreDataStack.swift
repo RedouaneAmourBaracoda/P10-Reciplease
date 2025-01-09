@@ -9,26 +9,23 @@ import CoreData
 import Foundation
 
 final class CoreDataStack {
+    var persistentContainer: NSPersistentContainer
 
-    // MARK: Properties
+    var context: NSManagedObjectContext { persistentContainer.viewContext }
 
-    private enum PersistentKeys {
+    init(persistentContainer: NSPersistentContainer = .FavoriteRecipesContainer) {
+        self.persistentContainer = persistentContainer
+    }
+
+    static let shared: CoreDataStack = CoreDataStack()
+}
+
+extension NSPersistentContainer {
+    enum PersistentKeys {
         static let persitentContainerName = "FavoriteRecipes"
     }
 
-    // MARK: Singleton
-
-    static let shared = CoreDataStack()
-
-    private init() {}
-
-    // MARK: Public
-
-    var context: NSManagedObjectContext { persitentContainer.viewContext }
-
-    // MARK: Private
-
-    private lazy var persitentContainer: NSPersistentContainer = {
+    static let FavoriteRecipesContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: PersistentKeys.persitentContainerName)
         container.loadPersistentStores { storeDescription, error in
 
