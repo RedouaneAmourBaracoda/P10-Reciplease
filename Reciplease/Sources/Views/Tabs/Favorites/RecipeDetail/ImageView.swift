@@ -5,6 +5,7 @@
 //  Created by Redouane on 03/12/2024.
 //
 
+import Kingfisher
 import SwiftUI
 
 struct ImageView: View {
@@ -32,11 +33,25 @@ struct ImageView: View {
 
     var body: some View {
         ZStack {
-            asyncImage()
+            cachedImage()
             contentInfo()
         }
         .frame(height: imageHeight)
         .clipShape(.rect(cornerRadius: 1.0))
+    }
+
+    @MainActor
+    private func cachedImage() -> some View {
+        KFImage(URL(string: imageURL))
+            .placeholder {
+                ProgressView().progressViewStyle(.circular)
+            }
+            .onFailureImage(KFCrossPlatformImage(systemName: "xmark.circle"))
+            .loadDiskFileSynchronously()
+            .cacheMemoryOnly()
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(maxHeight: imageHeight)
     }
 
     private func contentInfo() -> some View {
@@ -89,29 +104,6 @@ struct ImageView: View {
         }
     }
 
-    private func asyncImage() -> some View {
-        AsyncImage(url: URL(string: imageURL)) {
-            imageLoadingResult(phase: $0)
-        }
-    }
-
-    @ViewBuilder
-    private func imageLoadingResult(phase: AsyncImagePhase) -> some View {
-        switch phase {
-        case let .success(image):
-            image
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxHeight: imageHeight)
-        case let .failure(error):
-            Text(Localizable.imageNotFound + " : " + error.localizedDescription)
-        case .empty:
-            ProgressView()
-        @unknown default:
-            Text(Localizable.undeterminedErrorDescription)
-        }
-    }
-
     init(recipe: Recipe, height: CGFloat) {
         self.title = recipe.name
         self.ingredients = recipe.preparation.ingredients.joined(separator: ", ")
@@ -139,13 +131,6 @@ private extension Recipe {
 
         return output
     }
-}
-
-private extension Localizable {
-    static let imageNotFound = NSLocalizedString(
-        "recipe.image.not-found",
-        comment: ""
-    )
 }
 
 #Preview {

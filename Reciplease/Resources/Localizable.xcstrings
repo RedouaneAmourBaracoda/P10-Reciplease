@@ -353,28 +353,6 @@
         }
       }
     },
-    "recipe.image.not-found" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No image available"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No hay imagen disponible"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aucune image disponible"
-          }
-        }
-      }
-    },
     "recipe.search-button.title" : {
       "localizations" : {
         "en" : {
