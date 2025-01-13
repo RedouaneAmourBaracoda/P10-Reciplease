@@ -44,7 +44,6 @@ struct RecipeDetailView: View {
             VStack(alignment: .leading, spacing: 0) {
                 ImageView(recipe: viewModel.recipe, height: 300)
                 ingredients()
-                directionsButton()
                 Spacer()
             }
         }
@@ -62,34 +61,9 @@ struct RecipeDetailView: View {
         .foregroundStyle(.white)
         .safeAreaPadding(.horizontal)
     }
-
-    private func directionsButton() -> some View {
-        HStack {
-            Spacer()
-            Button {
-
-            } label: {
-                Text(Localizable.getDirectionsButtonTitle)
-                    .font(.title)
-                    .foregroundStyle(.white)
-                    .padding(.vertical)
-                    .padding(.horizontal, 80)
-                    .background { CustomColors.secondary }
-                    .clipShape(RoundedRectangle(cornerRadius: 5.0))
-                    .padding()
-            }
-            Spacer()
-        }
-        .padding(.vertical)
-    }
 }
 
 private extension Localizable {
-    static let getDirectionsButtonTitle = NSLocalizedString(
-        "recipe-detail.directions-button.title",
-        comment: ""
-    )
-
     static let ingredientsListTitle = NSLocalizedString(
         "recipe-detail.ingredients-list.title",
         comment: ""

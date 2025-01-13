@@ -45,28 +45,6 @@
         }
       }
     },
-    "recipe-detail.directions-button.title" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Get directions"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Obtener direcciones"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Voir consignes"
-          }
-        }
-      }
-    },
     "recipe-detail.ingredients-list.title" : {
       "localizations" : {
         "en" : {
