@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8202FF02D3548B800235D9D /* FavoriteRecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8202FEF2D3548B800235D9D /* FavoriteRecipeListViewModel.swift */; };
 		B858B1902CFF8594001B4A10 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B858B18F2CFF8594001B4A10 /* SearchViewModelTests.swift */; };
 		B858B1932CFF8725001B4A10 /* MockRecipeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B858B1922CFF8725001B4A10 /* MockRecipeAPIService.swift */; };
 		B858B1982CFF90AB001B4A10 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B858B1972CFF90AB001B4A10 /* Recipe.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B8202FEF2D3548B800235D9D /* FavoriteRecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeListViewModel.swift; sourceTree = "<group>"; };
 		B858B18F2CFF8594001B4A10 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 		B858B1922CFF8725001B4A10 /* MockRecipeAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRecipeAPIService.swift; sourceTree = "<group>"; };
 		B858B1972CFF90AB001B4A10 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				B8B7B5542D2F27E700BA03EC /* PersistenceTests */,
 				B858B1912CFF86E2001B4A10 /* SearchTests */,
 				B8B7B55F2D2FC22100BA03EC /* RecipeDetailViewModelTests.swift */,
+				B8202FEF2D3548B800235D9D /* FavoriteRecipeListViewModel.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				B8B7B55E2D2F6B5D00BA03EC /* CoreDataStackMock.swift in Sources */,
 				B858B1932CFF8725001B4A10 /* MockRecipeAPIService.swift in Sources */,
 				B858B1902CFF8594001B4A10 /* SearchViewModelTests.swift in Sources */,
+				B8202FF02D3548B800235D9D /* FavoriteRecipeListViewModel.swift in Sources */,
 				B8DD82162CF298CA00BCFC22 /* EdamamAPIServiceTests.swift in Sources */,
 				B8B7B5562D2F281600BA03EC /* CoreDataStackTests.swift in Sources */,
 				B8B7B5602D2FC22100BA03EC /* RecipeDetailViewModelTests.swift in Sources */,

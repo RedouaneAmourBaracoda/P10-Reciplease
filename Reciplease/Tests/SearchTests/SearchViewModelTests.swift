@@ -111,7 +111,7 @@ final class SearchViewModelTests: XCTestCase {
 
         // Then.
 
-        XCTAssertEqual(searchViewModel.foodList, food)
+        XCTAssertEqual(searchViewModel.foodList, food.filter { !$0.isEmpty })
     }
 
     func testButtonIsDisabledWhenFoodListIsEmpty() async {
