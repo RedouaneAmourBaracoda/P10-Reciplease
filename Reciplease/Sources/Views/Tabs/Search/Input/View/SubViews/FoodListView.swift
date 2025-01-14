@@ -43,6 +43,7 @@ struct FoodListView: View {
                     .background { Color.gray }
                     .clipShape(RoundedRectangle(cornerRadius: 5.0))
             })
+            .accessibilityHint(Localizable.clearFoodListButtonAccessibilityHint)
         }
         .padding(.horizontal)
     }
@@ -67,6 +68,11 @@ private extension Localizable {
 
     static let clearFoodListButtonTitle = NSLocalizedString(
         "search.food-list.clear-button.title",
+        comment: ""
+    )
+
+    static let clearFoodListButtonAccessibilityHint = NSLocalizedString(
+        "search.food-list.clear-button.accessibility-hint",
         comment: ""
     )
 }

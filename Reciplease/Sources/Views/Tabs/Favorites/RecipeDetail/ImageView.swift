@@ -34,6 +34,7 @@ struct ImageView: View {
     var body: some View {
         ZStack {
             cachedImage()
+                .accessibilityHidden(true)
             contentInfo()
         }
         .frame(height: imageHeight)
@@ -74,7 +75,11 @@ struct ImageView: View {
         HStack(spacing: 10) {
             VStack(spacing: 10) {
                 Text(servings)
+                    .accessibilityLabel(Localizable.recipeDetailServingsAccessibilityLabel)
+                    .accessibilityValue(servings)
                 Text(time)
+                    .accessibilityLabel(Localizable.recipeDetailTimingAccessibilityLabel)
+                    .accessibilityValue(time)
             }
             .lineLimit(1)
             VStack(spacing: 10) {
@@ -97,10 +102,14 @@ struct ImageView: View {
                 .font(.title)
                 .fontWeight(.medium)
                 .foregroundStyle(.white)
+                .accessibilityLabel(Localizable.recipeDetailTitleAccessibilityLabel)
+                .accessibilityValue(title)
             Text(ingredients)
                 .font(.title3)
                 .fontWeight(.light)
                 .foregroundStyle(.white.secondary)
+                .accessibilityLabel(Localizable.recipeDetailListAccessibilityLabel)
+                .accessibilityValue(ingredients)
         }
     }
 
@@ -131,6 +140,28 @@ private extension Recipe {
 
         return output
     }
+}
+
+private extension Localizable {
+    static let recipeDetailTitleAccessibilityLabel = NSLocalizedString(
+        "recipe-detail.title.accessibility-label",
+        comment: ""
+    )
+
+    static let recipeDetailListAccessibilityLabel = NSLocalizedString(
+        "recipe-detail.ingredients.accessibility-label",
+        comment: ""
+    )
+
+    static let recipeDetailTimingAccessibilityLabel = NSLocalizedString(
+        "recipe-detail.timing.accessibility-label",
+        comment: ""
+    )
+
+    static let recipeDetailServingsAccessibilityLabel = NSLocalizedString(
+        "recipe-detail.servings.accessibility-label",
+        comment: ""
+    )
 }
 
 #Preview {

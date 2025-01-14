@@ -63,6 +63,7 @@ struct SearchView: View {
                     .padding()
             }
             .disabled(viewModel.isSearchButtonDisabled)
+            .accessibilityHint(Localizable.searchForRecipesButtonAccessibilityHint)
         }
     }
 }
@@ -80,6 +81,11 @@ extension Localizable {
 
     static let searchForRecipesButtonTitle = NSLocalizedString(
         "search.food-list.button.title",
+        comment: ""
+    )
+
+    static let searchForRecipesButtonAccessibilityHint = NSLocalizedString(
+        "search.food-list.button.accessibility-hint",
         comment: ""
     )
 }

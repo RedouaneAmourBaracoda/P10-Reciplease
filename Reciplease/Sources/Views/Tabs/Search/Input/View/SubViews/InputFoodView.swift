@@ -25,9 +25,12 @@ struct InputFoodView: View {
             HStack(spacing: 8) {
                 VStack {
                     TextField(Localizable.searchFoodPlaceholder, text: $viewModel.inputFoodText)
+                        .foregroundStyle(.black)
                         .fontWeight(.bold)
                         .autocorrectionDisabled()
                         .focused($showKeyboard)
+                        .accessibilityLabel(Localizable.textFieldAccessibilityLabel)
+                        .accessibilityHint(Localizable.textFieldAccessibilityHint)
                     Divider()
                 }
                 Button {
@@ -41,6 +44,7 @@ struct InputFoodView: View {
                         .background { CustomColors.secondary }
                         .clipShape(RoundedRectangle(cornerRadius: 5.0))
                 }
+                .accessibilityHint(Localizable.addFoodButtonAccessibilityHint)
             }
             .padding(.horizontal)
         }
@@ -64,6 +68,21 @@ private extension Localizable {
 
     static let addFoodButtonTitle = NSLocalizedString(
         "search.food.add-button.title",
+        comment: ""
+    )
+
+    static let textFieldAccessibilityLabel = NSLocalizedString(
+        "search.food.textfield.accessibility-label",
+        comment: ""
+    )
+
+    static let textFieldAccessibilityHint = NSLocalizedString(
+        "search.food.textfield.accessibility-hint",
+        comment: ""
+    )
+
+    static let addFoodButtonAccessibilityHint = NSLocalizedString(
+        "search.food.add-button.accessibility-hint",
         comment: ""
     )
 }

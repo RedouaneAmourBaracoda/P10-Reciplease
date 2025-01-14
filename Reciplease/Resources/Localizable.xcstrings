@@ -89,6 +89,94 @@
         }
       }
     },
+    "recipe-detail.ingredients.accessibility-label" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List of ingredients"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "lista de ingredientes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liste d'ingrédients"
+          }
+        }
+      }
+    },
+    "recipe-detail.servings.accessibility-label" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Servings"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "raciones"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Portions"
+          }
+        }
+      }
+    },
+    "recipe-detail.timing.accessibility-label" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duration"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "duración"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durée"
+          }
+        }
+      }
+    },
+    "recipe-detail.title.accessibility-label" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recipe title"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "título de la receta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titre de la recette"
+          }
+        }
+      }
+    },
     "recipe.edamam-api.errors.bad-request.description" : {
       "localizations" : {
         "en" : {
@@ -397,6 +485,28 @@
         }
       }
     },
+    "search.food-list.button.accessibility-hint" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This button is disabled when the ingredients list is empty or if there is already a search in progress."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este botón está desactivado cuando la lista de ingredientes está vacía o si ya hay una búsqueda en progreso."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce bouton est désactivé lorsque la liste d'ingrédients est vide ou qu'une recherche est déjà en cours."
+          }
+        }
+      }
+    },
     "search.food-list.button.title" : {
       "localizations" : {
         "en" : {
@@ -415,6 +525,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rechercher les recettes"
+          }
+        }
+      }
+    },
+    "search.food-list.clear-button.accessibility-hint" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap this button to clear the whole list."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pulse este botón para borrar toda la lista."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez sur ce bouton pour effacer toute la liste."
           }
         }
       }
@@ -463,6 +595,28 @@
         }
       }
     },
+    "search.food.add-button.accessibility-hint" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap this button to add the dictated food to your list."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pulse este botón para añadir la comida dictada a su lista."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez sur ce bouton pour ajouter l'ingrédient dicté à votre liste."
+          }
+        }
+      }
+    },
     "search.food.add-button.title" : {
       "localizations" : {
         "en" : {
@@ -481,6 +635,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajouter"
+          }
+        }
+      }
+    },
+    "search.food.textfield.accessibility-hint" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This text field allows you to dictate one ingredient at a time like lemon, tomato, ginger, orange and so on. Once dictated you can add it to your list of ingredients with the add button on the right side."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este campo de texto le permite dictar un ingrediente a la vez como limón, tomate, jengibre, naranja y así sucesivamente. Una vez dictado, puedes añadirlo a tu lista de ingredientes con el botón de añadir en el lado derecho."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce champ de texte permet de dicter un ingrédient à la fois comme du citron, de la tomate, du gingembre, de l’orange et ainsi de suite. Une fois dictée, vous pouvez l’ajouter à votre liste d’ingrédients avec le bouton ajouter sur le côté droit."
+          }
+        }
+      }
+    },
+    "search.food.textfield.accessibility-label" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text field"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Campo de texto"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Champ de texte"
           }
         }
       }
