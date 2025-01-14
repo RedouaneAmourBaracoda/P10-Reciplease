@@ -24,6 +24,10 @@ struct RecipeListView: View {
                     } label: {
                         ImageView(recipe: recipe, height: 200)
                     }
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(Localizable.recipeDetailTitleAccessibilityLabel)
+                    .accessibilityValue(recipe.name)
+
                     Rectangle()
                         .fill(.black)
                         .frame(height: 3.0)

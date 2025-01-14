@@ -18,10 +18,11 @@ struct RecipeDetailView: View {
     var body: some View {
         NavigationStack {
             content()
-                .customNavigationBar(navigationTitle: Localizable.navigationTitle)
+                .customNavigationBar(navigationTitle: Localizable.recipeDetailScreenNavigatioTitle)
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
                         Text(Localizable.backButtonTitle).opacity(0)
+                            .accessibilityLabel(Localizable.backButtonTitle)
                     }
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
@@ -63,9 +64,34 @@ struct RecipeDetailView: View {
     }
 }
 
-private extension Localizable {
+extension Localizable {
+    static let recipeDetailScreenNavigatioTitle = NSLocalizedString(
+        "recipe-detail.navigation-title",
+        comment: ""
+    )
+
     static let ingredientsListTitle = NSLocalizedString(
         "recipe-detail.ingredients-list.title",
+        comment: ""
+    )
+
+    static let recipeDetailTitleAccessibilityLabel = NSLocalizedString(
+        "recipe-detail.title.accessibility-label",
+        comment: ""
+    )
+
+    static let recipeDetailListAccessibilityLabel = NSLocalizedString(
+        "recipe-detail.ingredients.accessibility-label",
+        comment: ""
+    )
+
+    static let recipeDetailTimingAccessibilityLabel = NSLocalizedString(
+        "recipe-detail.timing.accessibility-label",
+        comment: ""
+    )
+
+    static let recipeDetailServingsAccessibilityLabel = NSLocalizedString(
+        "recipe-detail.servings.accessibility-label",
         comment: ""
     )
 }

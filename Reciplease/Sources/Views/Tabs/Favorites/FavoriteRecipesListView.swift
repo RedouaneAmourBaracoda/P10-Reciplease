@@ -13,7 +13,7 @@ struct FavoriteRecipesListView: View {
     var body: some View {
         NavigationStack {
             conditionalList()
-                .customNavigationBar(navigationTitle: Localizable.navigationTitle)
+                .customNavigationBar(navigationTitle: Localizable.recipeListNavigationTitle)
                 .alert(isPresented: $viewModel.shouldPresentAlert) {
                     Alert(title: Text(Localizable.errorAlertTitle), message: Text(viewModel.errorMessage))
                 }

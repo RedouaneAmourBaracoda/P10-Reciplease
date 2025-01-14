@@ -17,14 +17,22 @@ struct SearchResultRecipesListView: View {
     var body: some View {
         NavigationStack {
             RecipeListView(viewModel: .init(recipes: viewModel.recipes))
-                .customNavigationBar(navigationTitle: Localizable.navigationTitle)
+                .customNavigationBar(navigationTitle: Localizable.recipeListNavigationTitle)
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
                         Text(Localizable.backButtonTitle).opacity(0)
+                            .accessibilityLabel(Localizable.backButtonTitle)
                     }
                 }
         }
     }
+}
+
+extension Localizable {
+    static let recipeListNavigationTitle = NSLocalizedString(
+        "search.result-list.screen-title",
+        comment: ""
+    )
 }
 
 #Preview {

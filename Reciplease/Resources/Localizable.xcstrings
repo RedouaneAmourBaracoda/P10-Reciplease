@@ -111,6 +111,28 @@
         }
       }
     },
+    "recipe-detail.navigation-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recipe detail"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "detalle de la receta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détail de la recette"
+          }
+        }
+      }
+    },
     "recipe-detail.servings.accessibility-label" : {
       "localizations" : {
         "en" : {
@@ -745,6 +767,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reciplease"
+          }
+        }
+      }
+    },
+    "search.result-list.screen-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List of recipes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "lista de recetas"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liste des recettes"
           }
         }
       }
