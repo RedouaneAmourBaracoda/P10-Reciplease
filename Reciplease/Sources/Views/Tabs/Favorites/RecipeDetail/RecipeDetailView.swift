@@ -30,6 +30,10 @@ struct RecipeDetailView: View {
                         } label: {
                             viewModel.isFavorite ? Image(systemName: "star.fill") : Image(systemName: "star")
                         }
+                        .accessibilityValue(
+                            viewModel.isFavorite ? Localizable.favoriteButtonActivated
+                            : Localizable.favoriteButtonDeactivated
+                        )
                     }
                 }
                 .alert(isPresented: $viewModel.shouldPresentAlert) {
@@ -54,6 +58,7 @@ struct RecipeDetailView: View {
         Group {
             Text(Localizable.ingredientsListTitle)
                 .font(.custom(CustomFonts.body, size: 40))
+                .accessibilityAddTraits(.isHeader)
             ForEach(viewModel.recipe.preparation.directions, id: \.self) { direction in
                 Text("- \(direction)")
                     .font(.custom(CustomFonts.body, size: 25))
@@ -61,6 +66,7 @@ struct RecipeDetailView: View {
         }
         .foregroundStyle(.white)
         .safeAreaPadding(.horizontal)
+        .accessibilityElement(children: .contain)
     }
 }
 
@@ -92,6 +98,16 @@ extension Localizable {
 
     static let recipeDetailServingsAccessibilityLabel = NSLocalizedString(
         "recipe-detail.servings.accessibility-label",
+        comment: ""
+    )
+
+    static let favoriteButtonActivated = NSLocalizedString(
+        "recipe-detail.favorite-button.activated",
+        comment: ""
+    )
+
+    static let favoriteButtonDeactivated = NSLocalizedString(
+        "recipe-detail.favorite-button.deactivated",
         comment: ""
     )
 }

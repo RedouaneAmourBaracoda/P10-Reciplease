@@ -67,24 +67,68 @@
         }
       }
     },
-    "recipe-detail.ingredients-list.title" : {
+    "recipe-detail.favorite-button.activated" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ingredients"
+            "value" : "bookmarked"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ingredientes"
+            "value" : "marcado"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ingrédients"
+            "value" : "Activé"
+          }
+        }
+      }
+    },
+    "recipe-detail.favorite-button.deactivated" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "unbookmarked"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin marca"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désactivé"
+          }
+        }
+      }
+    },
+    "recipe-detail.ingredients-list.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instructions"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instructiones"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consignes de préparation"
           }
         }
       }
@@ -150,7 +194,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Portions"
+            "value" : "Nombre de portions"
           }
         }
       }
@@ -195,6 +239,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Titre de la recette"
+          }
+        }
+      }
+    },
+    "recipe-detail.unknown-time" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "desconocido"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non renseigné"
           }
         }
       }

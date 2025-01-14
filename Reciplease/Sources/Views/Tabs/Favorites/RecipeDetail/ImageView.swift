@@ -75,16 +75,24 @@ struct ImageView: View {
         HStack(spacing: 10) {
             VStack(spacing: 10) {
                 Text(servings)
+                    .accessibilityLabel(Localizable.recipeDetailServingsAccessibilityLabel)
+                    .accessibilityValue(servings)
                 Text(time)
+                    .accessibilityLabel(Localizable.recipeDetailTimingAccessibilityLabel)
+                    .accessibilityValue(
+                        time == "-" ? Localizable.unknownTime : time
+                    )
             }
             .lineLimit(1)
+
             VStack(spacing: 10) {
                 Image(systemName: "fork.knife.circle")
                 Image(systemName: "clock")
             }
+            .accessibilityHidden(true)
         }
         .foregroundStyle(.white)
-        .frame(width: 70, height: 60)
+        .frame(width: 80, height: 60)
         .background {
             Rectangle()
                 .foregroundStyle(CustomColors.main)
@@ -98,10 +106,14 @@ struct ImageView: View {
                 .font(.title)
                 .fontWeight(.medium)
                 .foregroundStyle(.white)
+                .accessibilityLabel(Localizable.recipeDetailTitleAccessibilityLabel)
+                .accessibilityValue(title)
             Text(ingredients)
                 .font(.title3)
                 .fontWeight(.medium)
                 .foregroundStyle(.white.secondary)
+                .accessibilityLabel(Localizable.recipeDetailListAccessibilityLabel)
+                .accessibilityValue(ingredients)
         }
     }
 
@@ -126,12 +138,19 @@ private extension Recipe {
 
         let hoursString = hours == 0 ? "" : "~" + String(hours) + "h"
 
-        let minutesString = minutes == 0 ? "" : String(minutes) + "m"
+        let minutesString = minutes == 0 ? "" : String(minutes) + "min"
 
         let output = hoursString.isEmpty ? minutesString : hoursString
 
         return output
     }
+}
+
+private extension Localizable {
+    static let unknownTime = NSLocalizedString(
+        "recipe-detail.unknown-time",
+        comment: ""
+    )
 }
 
 #Preview {
