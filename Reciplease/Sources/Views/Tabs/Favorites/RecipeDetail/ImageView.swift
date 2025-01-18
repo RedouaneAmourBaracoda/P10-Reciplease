@@ -66,7 +66,7 @@ struct ImageView: View {
                 titleInfo()
                 Spacer()
             }
-            .background(.black.opacity(1/3))
+            .background(.black.opacity(2/3))
         }
         .safeAreaPadding()
     }
@@ -111,7 +111,7 @@ struct ImageView: View {
             Text(ingredients)
                 .font(.title3)
                 .fontWeight(.medium)
-                .foregroundStyle(.white.secondary)
+                .foregroundStyle(.white)
                 .accessibilityLabel(Localizable.recipeDetailListAccessibilityLabel)
                 .accessibilityValue(ingredients)
         }
